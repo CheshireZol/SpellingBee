@@ -1,0 +1,204 @@
+1|adorable|adj. //əˈdɔːrəbl// very attractive and easy to feel love for
+2|adult|n. //ˈædʌlt// a fully grown person who is legally responsible for their actions
+3|afraid|adj. //əˈfreɪd// feeling fear; frightened because you think that you might be hurt or suffer
+4|afternoon|n. //ˌæftərˈnuːn// the part of the day from 12 midday until about 6 o’clock
+5|agree|v. //əˈɡriː// to have the same opinion as somebody; to say that you have the same opinion
+6|alien|n. //ˈeɪliən// a person who is not a citizen of the country in which they live or work
+7|amazing|adj. //əˈmeɪzɪŋ// very surprising, especially in a way that makes you feel pleasure or admiration
+8|ambulance|n. //ˈæmbjələns// a vehicle with special equipment, used for taking sick or injured people to a hospital
+9|anchor|n. //ˈæŋkər// a heavy metal object that is attached to a rope or chain and dropped over the side of a ship or boat to keep it in one place
+10|aquatic|adj. //əˈkwætɪk// growing or living in, on or near water
+11|Astronomy|n. //əˈstrɑːnəmi// the scientific study of the sun, moon, stars, planets, etc.
+12|Azkaban|n. //əˈzkəban// high security magical prison
+13|barefoot|adj. //ˈberfʊt// not wearing anything on your feet
+14|baseball|n. //ˈbeɪsbɔːl//a game played especially in the US by two teams of nine players, using a bat and a ball
+15|beautiful|adj. //ˈbjuːtɪfl// having beauty; pleasing to the senses or to the mind
+16|because|conj. //bɪˈkɔːz// for the reason that
+17|behind|p. //bɪˈhaɪnd// at or towards the back of somebody/something, and often hidden by it or them
+18|believe|v. //bɪˈliːv// to feel certain that something is true or that somebody is telling you the truth
+19|bicycle|n. //ˈbaɪsɪkl// a road vehicle with two wheels that you ride by
+20|billboard|n. //ˈbɪlbɔːrd// a large board on the outside of a building or at the side of the road, used for putting advertisements on
+21|birthday|n. //ˈbɜːrθdeɪ// the day in each year which is the same date as the one on which you were born
+22|blind|adj. //blaɪnd// not able to see
+23|block|n. //blɑːk// a large piece of a solid material that is square or rectangular in shape and usually has flat sides
+24|bloom|v. //bluːm// to produce flowers
+25|bored|adj. //bɔːrd// feeling tired and impatient because you have lost interest in somebody/something or because you have nothing to do
+26|borrow|v. //ˈbɔːroʊ// to take and use something that belongs to somebody else, and return it to them at a later time
+27|breakfast|n. //ˈbrekfəst// the first meal of the day
+28|bridge|n. //brɪdʒ// a structure that is built over a road, railway/railroad, river, etc. so that people or vehicles can cross from one side to the other
+29|broccoli|n. //ˈbrɑːkəli// a vegetable with a thick green stem and several dark green or purple flower heads
+30|bucket|n. //ˈbʌkɪt// an open container with a handle, used for carrying or holding liquids, sand, etc.
+31|butter|n. //ˈbʌtər// a soft yellow food made from cream, used in cooking and for spreading on bread
+32|camel|n. //ˈkæml// an animal with a long neck and one or two humps on its back, used in desert countries for riding on or for carrying goods
+33|candle|n. //ˈkændl// a round stick of wax with a piece of string (called a wick ) through the middle which is lit to give light as it burns
+34|celebrate|v. //ˈselɪbreɪt// to show that a day or an event is important by doing something special on it
+35|charm|n. // tʃɑːrm // the power of pleasing or attracting people
+36|children|n. //ˈtʃɪldrən// pl. of child: a young human who is not yet an adult
+37|China|n. //ˈtʃaɪnə// a country in eastern Asia
+38|Chinese|adj. //ˌtʃaɪˈniːz// from or connected with China
+39|choice|n. //tʃɔɪs// an act of choosing between two or more possibilities; something that you can choose
+40|Christmas|n. //ˈkrɪsməs// (also Christmas Day) 25 December, the day when Christians celebrate the birth of Christ
+41|church|n. //tʃɜːrtʃ// a building where Christians go to worship
+42|circle|n. //ˈsɜːrkl// a completely round flat shape
+43|classmate|n. //ˈklæsmeɪt// a person who is or was in the same class as you at school or college
+44|community|n. //kəˈmjuːnəti// all the people who live in a particular area, country, etc. when talked about as a group
+45|complete|"adj. //kəmˈpliːt// used when you are emphasizing something, to mean ‘to the greatest
+degree possible’"
+46|computer|n. //kəmˈpjuːtər// an electronic machine that can store, organize and find information, do calculations and control other machines
+47|conflict|n. //ˈkɑːnflɪkt// a situation in which people, groups or countries are involved in a serious disagreement or argument
+48|contact|n. //ˈkɑːntækt// the act of communicating with somebody, especially regularly
+49|cottage|n. //ˈkɑːtɪdʒ// a small house, especially in the country
+50|cotton|n. //ˈkɑːtn// a plant grown in warm countries for the soft white hairs around its seeds that are used to make cloth and thread
+51|country|n. //ˈkʌntri// an area of land that has or used to have its own government and laws
+52|coyote|n. //kaɪˈoʊti// an American wild animal of the dog family
+53|crispy|adj. //ˈkrɪspi// pleasantly hard and dry
+54|crossword|n. //ˈkrɔːswɜːrd// a game in which you have to fit words across and downwards into spaces with numbers in a square diagram. You find the words by solving clues
+55|decide|v. //dɪˈsaɪd// to think carefully about the different possibilities that are available and choose one of them
+56|decorate|v. //ˈdekəreɪt// to make something look more attractive by putting things on it
+57|delicious|adj. //dɪˈlɪʃəs//having a very pleasant taste or smell
+58|dialog|n. //ˈdaɪəlɔːɡ// conversations in a book, play, or film/movie
+59|dinner|n. //ˈdɪnər// the main meal of the day, eaten either in the middle of the day or in the evening
+60|dinosaur|n. //ˈdaɪnəsɔːr// an animal that lived millions of years ago but is now extinct
+61|disease|n. //dɪˈziːz// an illness affecting humans, animals or plants, often caused by infection
+62|dolphin|n. //ˈdɑːlfɪn// a sea animal (a mammal ) that looks like a large fish with a pointed mouth
+63|dragon|n. //ˈdræɡən// a large aggressive animal with wings and a long tail, that can breathe out fire
+64|drink|v. //drɪŋk// to take liquid into your mouth and swallow it
+65|drop|v. //drɑːp// to fall or allow something to fall by accident
+66|Earth|n. //ɜːrθ// the world; the planet that we live on
+67|Egyptian|n. //iˈdʒɪpʃn// ( a person) from Egypt
+68|element|n. //ˈelɪmənt// a necessary or typical part of something
+69|England|n. //ˈɪŋɡlənd// a country forming the largest and southernmost part of Great Britain and of the United Kingdom, and containing the capital, London
+70|enormous|adj. //ɪˈnɔːrməs// extremely large
+71|entrance|n. //ˈentrəns// a door, gate, passage, etc. used for entering a room, building or place
+72|fantastic|adj. //fænˈtæstɪk// extremely good; excellent
+73|farmer|n. //ˈfɑːrmər// a person who owns or manages a farm
+74|father|n. //ˈfɑːðər// a male parent of a child or an animal
+75|football|n. //ˈfʊtbɔːl// a game played by two teams of 11 players, using a ball which players kick up and down the playing field. Teams try to kick the ball into the other team’s goal
+76|forest|n. //ˈfɔːrɪst// the sound or mark made each time your foot touches the ground when you are walking or running
+77|Friday|n. //ˈfraɪdeɪ// the day of the week after Thursday and before Saturday
+78|friend|n. //frend// a person you know well and like, and who is not usually a member of your family
+79|future|n. //ˈfjuːtʃər// the time that will come after the present or the events that will happen then
+80|game|n. //ɡeɪm// an activity or a sport with rules in which people or teams compete against each other
+81|garage|n. //ɡəˈrɑːʒ// a building for keeping one or more cars or other vehicles in
+82|genie|n. //ˈdʒiːni// a spirit with magic powers, especially one that lives in a bottle or a lamp
+83|ghost|n. //ɡoʊst// the spirit of a dead person that a living person believes they can see or hear
+84|giant|n. //ˈdʒaɪənt// a very large strong person who is often cruel
+85|giraffe|n. //dʒəˈræf// a tall African animal with a very long neck, long legs, and dark marks on its coat
+86|grandma|n. //ˈɡrænmɑː// grandmother
+87|grandpa|n. //ˈɡrænpɑː// grandfather
+88|Gryffindor|n. // ˈɡrɪfɪndɔːr// Harry´s house at Hogwarts
+89|golden|adj. //ˈɡoʊldən// made of gold
+90|half|n. //hæf// either of two equal parts into which something is or can be divided
+91|Halloween|"n. //ˌhæloʊˈiːn// the night of 31st October when it was believed in the past that dead
+people appeared from their graves, and which is now celebrated in the US, Canada and Britain by children who dress as ghosts, witches, etc."
+92|hamburger|n. //ˈhæmbɜːrɡər// finely chopped beef made into a flat round shape that is then fried, often served in a bread roll
+93|help|v. //help// to make it easier or possible for somebody to do something by doing something for them or by giving them something that they need
+94|hug|v. //hʌɡ// to put your arms around somebody and hold them tightly, especially to show that you like or love them
+95|huge|adj. //hjuːdʒ// extremely large in size or amount; great in degree
+96|Hufflepuff|n. //hʌflpʌf// a house in Howarts
+97|ill|adj. //ɪl// suffering from an illness or disease; not feeling well
+98|important|adj. //ɪmˈpɔːrtnt// having a great effect on people or things; of great value
+99|incredible|adj. //ɪnˈkredəbl// impossible or very difficult to believe
+100|interest|n. //ˈɪntrəst// wanting to know more
+101|inventor|n. //ɪnˈventər// a person who has invented something or whose job is inventing things
+102|Italian|n. //ɪˈtæliən// from Italy
+103|jaguar|n. //ˈdʒæɡjuər// a large animal of the cat family that has yellowish-brown fur with black rings and spots. Jaguars live in parts of Central and S America
+104|knock|v. //nɑːk// to hit a door, etc. firmly in order to attract attention
+105|koala|n. //koʊˈɑːlə// an Australian animal with thick grey fur, large ears and no tail. Koalas live in trees and eat leaves
+106|layer|n. //ˈler// a quantity or thickness of something that lies over a surface or between surfaces
+107|learn|v. //lɜːrn// to gain knowledge or skill by studying, from experience, from being taught, etc.
+108|letter|n. //ˈletər// a message that is written down or printed on paper and usually put in an envelope and sent to somebody
+109|lizard|n. //ˈlɪzərd// a small reptile with a rough skin, four short legs and a long tail
+110|lollipop|n. //ˈlɑːlipɑːp// a hard round or flat sweet/candy made of boiled sugar on a small stick
+111|London|n. //ˈlʌndən// the capital city of England and the UK
+112|machine|"n. //məˈʃiːn// a piece of equipment with moving parts that is designed to do a particular
+job. The power used to work a machine may be electricity, steam, gas, etc. or human power"
+113|magical|adj. //ˈmædʒɪkl// containing magic; used in magic
+114|material|n. //məˈtɪriəl// cloth used for making clothes, curtains, etc.
+115|memory|n. //ˈmeməri// ability to remember
+116|mistake|n. //mɪˈsteɪk// an action or an opinion that is not correct, or that produces a result that you did not want
+117|month|n. //mʌnθ// any of the twelve periods of time into which the year is divided, for example May or June
+118|mother|n. //ˈmʌðər// a female parent of a child or animal; a person who is acting as a mother to a child
+119|muggle|n. /məgls/// a person who does not have magical powers
+120|music|n. //ˈmjuːzɪk// sounds that are arranged in a way that is pleasant or exciting to listen to. People sing music or play it on instruments
+121|mystery|n. //ˈmɪstri// something that is difficult to understand or to explain
+122|narration|n. //nəˈreɪʃn// the act or process of telling a story, especially in a novel, a film/movie or a play
+123|nobody|pron. //ˈnoʊbədi// no one
+124|October|n. //ɑːkˈtoʊbər// the 10th month of the year, between September and November
+125|offer|v. //ˈɔːfər// to say that you are willing to do something for somebody or give something to somebody
+126|organize|v. //ˈɔːrɡənaɪz// to arrange for something to happen or to be provided
+127|Patronus|n. //pəˈtrəˈnus// Wizards defend themselves against Dementors with a Patronus charm, and Potter conjures a glowing white stag to chase them off.
+128|picture|n. //ˈpɪktʃər// painting or drawing, etc. that shows a scene, a person or thing
+129|pocket|n. //ˈpɑːkɪt// in clothing, a small piece of material like a small bag sewn into or onto a piece of clothing so that you can carry things in it
+130|poem|n. //ˈpoʊəm// a piece of writing in which the words are chosen for their sound and the images they suggest, not just for their obvious meanings
+131|Potter|n. // ˈpɑːtər // A boy wizard and the hero of a series of widely read fantasies by the British author J. K. Rowling
+132|princess|n. //ˈprɪnses// a female member of a royal family who is not a queen, especially the daughter or granddaughter of the king or queen
+133|pumpkin|n. //ˈpʌmpkɪn// a large round vegetable with thick orange skin
+134|recycle|v. //ˌriːˈsaɪkl// to treat things that have already been used so that they can be used again
+135|remember|v. //rɪˈmembər// somebody/something from the past
+136|remove|v. //rɪˈmuːv// to take something/somebody away from a place
+137|result|n. //rɪˈzʌlt// caused by something
+138|ride|v. //raɪd// to sit on a horse, etc. and control it as it moves
+139|right|adj. //raɪt// true or correct as a fact
+140|rocket|n. //ˈrɑːkɪt// a spacecraft in the shape of a tube that is driven by a stream of gases let out behind it when fuel is burned inside
+141|secret|n. //ˈsiːkrət//  known about by only a few people; kept hidden from others
+142|scissors|n. //ˈsɪzərz// a tool for cutting paper or cloth, that has two sharp blades with handles, joined together in the middle
+143|signature|n. //ˈsɪɡnətʃər// your as you usually write it, for example at the end of a letter
+144|situation|n. //ˌsɪtʃuˈeɪʃn// all the circumstances and things that are happening at a particular time and in a particular place
+145|skate|v. //skeɪt// to move on skates
+146|Slytherin|n. //ˈslɪˈθerɪŋ// antagonistic house at Howarts
+147|soccer|n. //ˈsɑːkər// a game played by two teams of 11 players, using a round ball which players kick up and down the playing field. Teams try to kick the ball into the other team’s goal
+148|SortingHat|n. // ˈsɔːrtɪŋ hæt // talking hat which puts pupils in a house at Howarts
+149|station|n. //ˈsteɪʃn// a place where trains stop so that passengers can get on and off
+150|student|n. //ˈstuːdnt// a person who is studying at a school
+151|study|n. //ˈstʌdi// the activity of learning or gaining knowledge, either from books or by examining things in the world
+152|subway|n. //ˈsʌbweɪ// an underground railway/railroad system in a city
+153|suddenly|adv. //ˈsʌdənli// quickly and unexpectedly
+154|suddenly|adv. //ˈsʌdənli// quickly and unexpectedly
+155|summer|n. //ˈsʌmər// the warmest season of the year, coming between spring and autumn/fall
+156|sword|n. //sɔːrd// a weapon with a long metal blade and a handle
+157|system|n. //ˈsɪstəm// an organized set of ideas or theories or a particular way of doing something
+158|teacher|n. //ˈtiːtʃər// a person whose job is teaching, especially in a school
+159|team|n. //tiːm// a group of people who play a particular game or sport against another group of people
+160|Thursday|n. //ˈθɜːrzdeɪ// the day of the week after Wednesday and before Friday
+161|tie|v. //taɪ// to attach or hold two or more things together using string, rope, etc
+162|together|adv. //təˈɡeðər// with or near to somebody/something else; with each other
+163|tooth|n. //tuːθ// any of the hard white structures in the mouth used for biting and chewing food
+164|toothpaste|n. //ˈtuːθpeɪst// a substance that you put on a brush and use to clean your teeth
+165|tower|n. //ˈtaʊər// a tall narrow building or part of a building, especially of a church or castle
+166|trace|v. //treɪs// to follow the shape or outline of something
+167|travel|v. //ˈtrævl// to go from one place to another, especially over a long distance
+168|trendy|adj. //ˈtrendi// very fashionable
+169|trip|n. //trɪp// a journey to a place and back again, especially a short one for pleasure or a particular purpose
+170|trophy|n. //ˈtroʊfi// an object such as a silver cup that is given as a prize for winning a competition
+171|truck|n. //trʌk// a large vehicle for carrying heavy loads by road
+172|true|adj. //truː// connected with facts rather than things that have been invented or guessed
+173|turtle|n. //ˈtɜːrtl// a large reptile with a hard round shell, that lives in the sea
+174|twin|n. //twɪn// one of two children born at the same time to the same mother
+175|unfold|v. //ʌnˈfoʊld// to spread open or flat something that has previously been folded; to become open and flat
+176|universe|n. //ˈjuːnɪvɜːrs// the whole of space and everything in it, including the earth, the planets and the stars
+177|untie|v. //ʌnˈtaɪ// to undo a knot in something; to undo something that is tied
+178|useful|adj. //ˈjuːsfl// that can help you to do or achieve what you want
+179|vegetables|n. //ˈvedʒtəbl// a plant or part of a plant that is eaten as food
+180|video|n. //ˈvɪdioʊ// a system of recording moving pictures and sound, either using videotape or a digital method of storing data
+181|visitor|n. //ˈvɪzɪtər// a person who visits a person or place
+182|vocabulary|n. //vəˈkæbjəleri// all the words that a person knows or uses
+183|wait|v. //weɪt// to stay where you are or delay doing something until somebody/something comes or something happens
+184|weekend|n. //ˈwiːkend// Saturday and Sunday
+185|weird|adj. //wɪrd// very strange or unusual and difficult to explain
+186|welcome|intj. //ˈwelkəm// used as a greeting to tell somebody that you are pleased that they are there
+187|wheel|n. //wiːl// one of the round objects under a car, bicycle, bus, etc. that turns when it moves
+188|winter|n. //ˈwɪntər// the coldest season of the year, between autumn/fall and spring
+189|witch|n. //wɪtʃ// a woman who is believed to have magic powers, especially to do evil things. In stories, she usually wears a black pointed hat and flies on a broomstick
+190|woman|n. //ˈwʊmən// an adult female human
+191|worried|adj. //ˈwɜːrid// thinking about unpleasant things that have happened or that might happen and therefore feeling unhappy and afraid
+192|wrap|v. //ræp// to cover something completely in paper or other material
+193|wrong|adj. //rɔːŋ// not right or correct
+194|yard|n. //jɑːrd// an area outside a building, usually with a hard surface and a surrounding wall
+195|yawn|v. //jɔːn// to open your mouth wide and breathe in deeply through it, usually because you are tired or bored
+196|yell|v. //jel// to shout loudly, for example because you are angry, excited, frightened or in pain
+197|young|adj. //jʌŋ// having lived or existed for only a short time; not fully developed
+198|zipper|"n. //ˈzɪpər// a thing that you use to fasten clothes, bags, etc. It consists of two rows of
+metal or plastic teeth that you can pull together to close something or pull apart to open it"
+199|zombie|n. //ˈzɑːmbi// dead body that has been made alive again by magic
+200|zoo|n. //ˈzuː// a place where many kinds of wild animals are kept for the public to see and where they are studied
