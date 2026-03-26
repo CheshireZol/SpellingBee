@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Bee - Pro Dark Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgMain: '#0F172A',
+                        cardBg: '#1E293B',
+                        primary: '#6366F1',
+                        primaryHover: '#4F46E5',
+                        success: '#10B981',
+                        error: '#F43F5E',
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bgMain text-textMain font-sans min-h-screen flex items-center justify-center p-6">
+
+    <div class="w-full max-w-4xl">
+
+        <div id="view-config" class="block">
+            <h1 class="text-3xl font-bold mb-8">Configuración de Práctica</h1>
+            
+            <div class="bg-cardBg rounded-2xl shadow-xl p-8 mb-6">
+                <h2 class="text-xl font-bold text-primary mb-4">1. Selecciona la Lista</h2>
+                <div class="flex space-x-6">
+                    <label class="cursor-pointer flex items-center space-x-2">
+                        <input type="radio" name="lista" value="1" checked class="w-5 h-5 text-primary bg-bgMain border-gray-600 focus:ring-primary">
+                        <span class="text-lg">Lista 1</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center space-x-2">
+                        <input type="radio" name="lista" value="2" class="w-5 h-5 text-primary bg-bgMain border-gray-600 focus:ring-primary">
+                        <span class="text-lg">Lista 2</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="bg-cardBg rounded-2xl shadow-xl p-8 mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-primary">2. Selecciona las Páginas</h2>
+                    <span id="conteo-palabras" class="text-textMuted">Palabras seleccionadas: 0</span>
+                </div>
+                <div id="paginas-container" class="grid grid-cols-5 gap-4">
+                    </div>
+            </div>
+
+            <button id="btn-iniciar" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-4 rounded-xl shadow-lg transition-colors text-lg">
+                Comenzar Práctica
+            </button>
+        </div>
+
+        <div id="view-juego" class="hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 id="lbl-info-lista" class="text-xl font-bold text-primary">Lista 1 · Pág. 1 · Palabra #1</h2>
+                <span id="lbl-progreso" class="text-lg text-textMuted">Progreso: 1 de 20</span>
+            </div>
+
+            <div class="w-full bg-black rounded-full h-2.5 mb-8">
+                <div id="progress-bar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+
+            <div class="bg-cardBg rounded-2xl shadow-xl p-16 text-center mb-10 h-64 flex flex-col justify-center">
+                <h1 id="lbl-palabra" class="text-6xl font-bold mb-6">PALABRA</h1>
+                <p id="lbl-desc" class="text-xl text-textMuted">Descripción</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <button id="btn-incorrecto" class="bg-error hover:bg-red-600 text-white font-bold py-6 rounded-xl shadow-lg transition-colors text-xl">
+                    Incorrecta<br><span class="text-sm font-normal">[←] o [2]</span>
+                </button>
+                <button id="btn-correcto" class="bg-success hover:bg-green-600 text-white font-bold py-6 rounded-xl shadow-lg transition-colors text-xl">
+                    Correcta<br><span class="text-sm font-normal">[→] o [1]</span>
+                </button>
+            </div>
+
+            <div class="text-center">
+                <button id="btn-finalizar" class="text-textMuted hover:text-error transition-colors">Finalizar Sesión</button>
+            </div>
+        </div>
+
+        <div id="view-resultados" class="hidden">
+            <h1 class="text-3xl font-bold mb-8 text-center">Resultados de la Sesión</h1>
+
+            <div class="bg-cardBg rounded-2xl shadow-xl p-10 text-center mb-8">
+                <h2 id="lbl-porcentaje" class="text-7xl font-bold text-success mb-4">0%</h2>
+                <p id="lbl-detalle-score" class="text-xl">Aciertos: 0 • Errores: 0</p>
+            </div>
+
+            <div id="refuerzo-container" class="mb-8 hidden">
+                <h2 class="text-xl font-bold text-error mb-4">Lista de Refuerzo:</h2>
+                <div class="bg-cardBg rounded-xl shadow-lg overflow-hidden">
+                    <table class="w-full text-left">
+                        <thead class="bg-black/50 text-textMuted">
+                            <tr>
+                                <th class="py-3 px-4 text-center">Lista</th>
+                                <th class="py-3 px-4 text-center">Página</th>
+                                <th class="py-3 px-4 text-center">Línea #</th>
+                                <th class="py-3 px-4">Palabra</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-refuerzo" class="divide-y divide-gray-700">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <button id="btn-reiniciar" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-4 rounded-xl shadow-lg transition-colors text-lg">
+                Volver al Menú
+            </button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
