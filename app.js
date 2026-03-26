@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Lógica de Datos
 async function cargarListaActual() {
     const listaNum = document.querySelector('input[name="lista"]:checked').value;
-    const archivo = `ListaPalabras_${listaNum}.txt`;
+    const archivo = `ListaPalabras_Ronda${listaNum}.txt`;
     
     try {
         const respuesta = await fetch(archivo);
