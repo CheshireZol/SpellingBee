@@ -65,23 +65,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Lógica de Datos
+// Lógica de Datos
 async function cargarListaActual() {
+    // 1. Obtenemos qué radio button está seleccionado (1 o 2)
     const listaNum = document.querySelector('input[name="lista"]:checked').value;
+    
+    // 2. Ajustamos el nombre EXACTO como lo tienes en GitHub
     const archivo = `ListaPalabras_Ronda${listaNum}.txt`;
     
     try {
-        const respuesta = await fetch(archivo);
-        if (!respuesta.ok) throw new Error('Archivo no encontrado');
+        // 3. Forzamos al navegador a NO usar el caché (cache: 'no-store')
+        const respuesta = await fetch(archivo, { cache: 'no-store' });
+        if (!respuesta.ok) throw new Error(`Archivo no encontrado: ${archivo}`);
+        
         const texto = await respuesta.text();
         procesarTexto(texto);
         renderizarCheckboxes();
+        
+        // Un pequeño log para que confirmes en consola que cargó el correcto
+        console.log(`Cargado exitosamente: ${archivo} con ${palabrasTodas.length} palabras.`);
+        
     } catch (error) {
         console.error('Error:', error);
-        paginasContainer.innerHTML = `<p class="text-error col-span-5">⚠️ No se pudo cargar el archivo ${archivo}. (Lee la nota abajo sobre el servidor local).</p>`;
+        paginasContainer.innerHTML = `<p class="text-error col-span-5">⚠️ No se pudo cargar el archivo ${archivo}. Revisa los nombres exactos.</p>`;
         palabrasTodas = [];
         actualizarConteo();
     }
 }
+
 
 function procesarTexto(texto) {
     palabrasTodas = [];
