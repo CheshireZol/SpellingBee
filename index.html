@@ -36,11 +36,11 @@
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                     <label class="cursor-pointer flex items-center space-x-3">
                         <input type="radio" name="lista" value="1" checked class="w-5 h-5 text-primary bg-bgMain border-gray-600 focus:ring-primary">
-                        <span class="text-lg">Edición <b>2025</b></span>
+                        <span class="text-lg">Lista 1</span>
                     </label>
                     <label class="cursor-pointer flex items-center space-x-3">
                         <input type="radio" name="lista" value="2" class="w-5 h-5 text-primary bg-bgMain border-gray-600 focus:ring-primary">
-                        <span class="text-lg">Edición <b>2026</b></span>
+                        <span class="text-lg">Lista 2</span>
                     </label>
                 </div>
             </div>
@@ -72,9 +72,18 @@
                 <div id="progress-bar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
             </div>
 
-            <div class="bg-cardBg rounded-2xl shadow-xl p-6 sm:p-12 md:p-16 text-center mb-8 min-h-[16rem] flex flex-col justify-center items-center">
-                <h1 id="lbl-palabra" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 break-words w-full">PALABRA</h1>
-                <p id="lbl-desc" class="text-base sm:text-lg md:text-xl text-textMuted max-w-2xl">Descripción</p>
+            <div class="bg-cardBg rounded-2xl shadow-xl p-6 sm:p-8 mb-8 min-h-[20rem] sm:min-h-[22rem] flex flex-col">
+                
+                <div class="h-24 sm:h-28 flex items-center justify-center w-full">
+                    <h1 id="lbl-palabra" class="text-4xl sm:text-5xl md:text-6xl font-bold break-words w-full select-none">PALABRA</h1>
+                </div>
+                
+                <div class="border-t border-slate-700/50 my-2 w-11/12 mx-auto"></div>
+                
+                <div class="flex-1 flex items-start justify-center pt-4 w-full overflow-y-auto">
+                    <p id="lbl-desc" class="text-base sm:text-lg md:text-xl text-textMuted max-w-2xl leading-relaxed">Descripción</p>
+                </div>
+                
             </div>
 
             <div class="grid grid-cols-2 gap-4 sm:gap-8 mb-8">
@@ -110,7 +119,7 @@
                                 <th class="py-3 px-4 text-center">Lista</th>
                                 <th class="py-3 px-4 text-center">Página</th>
                                 <th class="py-3 px-4 text-center">Línea #</th>
-                                <th class="py-3 px-4">Palabra</th>
+                                <th class="py-3 px-4 text-center">Palabra</th>
                             </tr>
                         </thead>
                         <tbody id="tabla-refuerzo" class="divide-y divide-gray-700">
@@ -129,4 +138,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-
