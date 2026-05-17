@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Conectamos el botón de Marcar Todo que ahora está en el HTML
     document.getElementById('btn-toggle-all').addEventListener('click', toggleAll);
 
+    // Aseguramos el centrado total de la palabra por código
+    lblPalabra.classList.add('text-center');
+
     // Atajos de teclado
     document.addEventListener('keydown', (e) => {
         if (!viewJuego.classList.contains('hidden')) {
@@ -61,14 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Lógica de Datos
 async function cargarListaActual() {
-    // 1. Obtenemos qué radio button está seleccionado (1 o 2)
     const listaNum = document.querySelector('input[name="lista"]:checked').value;
     
-    // 2. Ajustamos el nombre EXACTO como lo tienes en GitHub
+    // Mantiene la lectura de tus archivos ListaPalabras_Ronda1.txt y ListaPalabras_Ronda2.txt
     const archivo = `ListaPalabras_Ronda${listaNum}.txt`;
     
     try {
-        // 3. Forzamos al navegador a NO usar el caché (cache: 'no-store')
         const respuesta = await fetch(archivo, { cache: 'no-store' });
         if (!respuesta.ok) throw new Error(`Archivo no encontrado: ${archivo}`);
         
@@ -76,7 +77,6 @@ async function cargarListaActual() {
         procesarTexto(texto);
         renderizarCheckboxes();
         
-        // Log para confirmar carga
         console.log(`Cargado exitosamente: ${archivo} con ${palabrasTodas.length} palabras.`);
         
     } catch (error) {
@@ -107,7 +107,6 @@ function procesarTexto(texto) {
         
         palabrasTodas.push({ num, pag, palabra, desc });
     });
-    // Asegurar orden
     palabrasTodas.sort((a, b) => a.num - b.num);
 }
 
@@ -144,7 +143,7 @@ function actualizarConteo() {
     let total = 0;
     
     if (seleccionadas.length === 0) {
-        total = palabrasTodas.length; // Si no hay checks, asume todas
+        total = palabrasTodas.length;
     } else {
         total = palabrasTodas.filter(p => seleccionadas.includes(p.pag)).length;
     }
@@ -165,7 +164,6 @@ function toggleAll() {
     actualizarConteo();
 }
 
-// Utilidad para barajar array (Fisher-Yates)
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex !== 0) {
@@ -183,7 +181,7 @@ function iniciarJuego() {
     if (seleccionadas.length > 0) {
         palabrasJuego = palabrasTodas.filter(p => seleccionadas.includes(p.pag));
     } else {
-        palabrasJuego = [...palabrasTodas]; // Si no marcó ninguna, van todas
+        palabrasJuego = [...palabrasTodas];
     }
 
     if (palabrasJuego.length === 0) {
@@ -196,7 +194,6 @@ function iniciarJuego() {
     incorrectas = [];
     indice = 0;
 
-    // Cambiar pantallas
     viewConfig.classList.add('hidden');
     viewConfig.classList.remove('block');
     viewJuego.classList.remove('hidden');
@@ -210,7 +207,10 @@ function mostrarSiguiente() {
         const p = palabrasJuego[indice];
         const listaNum = document.querySelector('input[name="lista"]:checked').value;
         
-        lblInfoLista.innerText = `Lista ${listaNum} · Pág. ${p.pag} · #${p.num}`;
+        // Mapeo dinámico de nombres de edición
+        const edicionLabel = listaNum === '1' ? 'Edición 2025' : 'Edición 2026';
+        
+        lblInfoLista.innerText = `${edicionLabel} · Pág. ${p.pag} · #${p.num}`;
         lblProgreso.innerText = `Progreso: ${indice + 1} de ${palabrasJuego.length}`;
         lblPalabra.innerText = p.palabra;
         lblDesc.innerText = p.desc || "(Sin descripción)";
@@ -230,6 +230,7 @@ function marcarCorrecto() {
     }
 }
 
+// Lógica de Resultados
 function marcarIncorrecto() {
     if (indice < palabrasJuego.length) {
         incorrectas.push(palabrasJuego[indice]);
@@ -238,7 +239,6 @@ function marcarIncorrecto() {
     }
 }
 
-// Lógica de Resultados
 function mostrarResultados() {
     viewJuego.classList.add('hidden');
     viewJuego.classList.remove('block');
@@ -251,7 +251,6 @@ function mostrarResultados() {
     lblPorcentaje.innerText = `${porcentaje.toFixed(1)}%`;
     lblDetalleScore.innerText = `Aciertos: ${correctas.length} • Errores: ${incorrectas.length}`;
 
-    // Colorear el porcentaje según el score
     lblPorcentaje.className = "text-6xl sm:text-7xl font-bold mb-2 sm:mb-4 " + 
         (porcentaje >= 80 ? "text-success" : (porcentaje >= 50 ? "text-primary" : "text-error"));
 
@@ -259,16 +258,16 @@ function mostrarResultados() {
         refuerzoContainer.classList.remove('hidden');
         tablaRefuerzo.innerHTML = '';
         const listaNum = document.querySelector('input[name="lista"]:checked').value;
+        const edicionLabel = listaNum === '1' ? 'Edición 2025' : 'Edición 2026';
 
-        // Ordenar errores por número original de la lista
         incorrectas.sort((a, b) => a.num - b.num).forEach(p => {
             const tr = document.createElement('tr');
             tr.className = "hover:bg-bgMain transition-colors text-sm sm:text-base";
             tr.innerHTML = `
-                <td class="py-3 px-2 sm:px-4 text-center border-t border-gray-700">Lista ${listaNum}</td>
+                <td class="py-3 px-2 sm:px-4 text-center border-t border-gray-700">${edicionLabel}</td>
                 <td class="py-3 px-2 sm:px-4 text-center border-t border-gray-700">Pág. ${p.pag}</td>
                 <td class="py-3 px-2 sm:px-4 text-center border-t border-gray-700">#${p.num}</td>
-                <td class="py-3 px-2 sm:px-4 border-t border-gray-700 font-bold">${p.palabra}</td>
+                <td class="py-3 px-2 sm:px-4 border-t border-gray-700 font-bold text-center">${p.palabra}</td>
             `;
             tablaRefuerzo.appendChild(tr);
         });
