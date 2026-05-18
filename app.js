@@ -6,6 +6,7 @@ let palabrasJuego = [];
 let correctas = [];
 let incorrectas = [];
 let indice = 0;
+let listaCargadaNum = '1'; // NUEVO: Memoria estricta de qué lista se descargó realmente
 
 // Elementos del DOM (Pantallas)
 const viewConfig = document.getElementById('view-config');
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnFinalizar.addEventListener('click', mostrarResultados);
     btnReiniciar.addEventListener('click', reiniciar);
     
-    // Conectamos el botón de Marcar Todo que ahora está en el HTML
+    // Conectamos el botón de Marcar Todo
     document.getElementById('btn-toggle-all').addEventListener('click', toggleAll);
 
     // Aseguramos el centrado total de la palabra por código
@@ -58,18 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cargar la lista 1 por defecto al abrir
+    // Cargar la lista por defecto al abrir
     cargarListaActual();
 });
 
 // Lógica de Datos
 async function cargarListaActual() {
     const listaNum = document.querySelector('input[name="lista"]:checked').value;
-    
-    // Mantiene la lectura de tus archivos ListaPalabras_Ronda1.txt y ListaPalabras_Ronda2.txt
     const archivo = `ListaPalabras_Ronda${listaNum}.txt`;
     
     try {
+        // Bloqueamos el botón mientras descarga para evitar desincronización
+        btnIniciar.disabled = true;
+        btnIniciar.innerText = "Cargando...";
+        btnIniciar.classList.add('opacity-50', 'cursor-not-allowed');
+
         const respuesta = await fetch(archivo, { cache: 'no-store' });
         if (!respuesta.ok) throw new Error(`Archivo no encontrado: ${archivo}`);
         
@@ -77,13 +81,23 @@ async function cargarListaActual() {
         procesarTexto(texto);
         renderizarCheckboxes();
         
+        // Guardamos en memoria la lista que REALMENTE se descargó
+        listaCargadaNum = listaNum; 
+        
+        // Desbloqueamos el botón
+        btnIniciar.disabled = false;
+        btnIniciar.innerText = "Comenzar Práctica";
+        btnIniciar.classList.remove('opacity-50', 'cursor-not-allowed');
+        
         console.log(`Cargado exitosamente: ${archivo} con ${palabrasTodas.length} palabras.`);
         
     } catch (error) {
         console.error('Error:', error);
-        paginasContainer.innerHTML = `<p class="text-error col-span-2 sm:col-span-3 md:col-span-5">⚠️ No se pudo cargar el archivo ${archivo}. (Asegúrate de los nombres exactos).</p>`;
+        paginasContainer.innerHTML = `<p class="text-error col-span-2 sm:col-span-3 md:col-span-5">⚠️ No se pudo cargar el archivo ${archivo}. (Asegúrate de haber hecho el git push correctamente).</p>`;
         palabrasTodas = [];
         actualizarConteo();
+        
+        btnIniciar.innerText = "Error de carga";
     }
 }
 
@@ -205,10 +219,9 @@ function iniciarJuego() {
 function mostrarSiguiente() {
     if (indice < palabrasJuego.length) {
         const p = palabrasJuego[indice];
-        const listaNum = document.querySelector('input[name="lista"]:checked').value;
         
-        // Mapeo dinámico de nombres de edición
-        const edicionLabel = listaNum === '1' ? 'Edición 2025' : 'Edición 2026';
+        // Ahora usamos la variable en memoria, NO el radio button
+        const edicionLabel = listaCargadaNum === '1' ? 'Edición 2025' : 'Edición 2026';
         
         lblInfoLista.innerText = `${edicionLabel} · Pág. ${p.pag} · #${p.num}`;
         lblProgreso.innerText = `Progreso: ${indice + 1} de ${palabrasJuego.length}`;
@@ -257,8 +270,9 @@ function mostrarResultados() {
     if (incorrectas.length > 0) {
         refuerzoContainer.classList.remove('hidden');
         tablaRefuerzo.innerHTML = '';
-        const listaNum = document.querySelector('input[name="lista"]:checked').value;
-        const edicionLabel = listaNum === '1' ? 'Edición 2025' : 'Edición 2026';
+        
+        // Usamos la memoria para la tabla final
+        const edicionLabel = listaCargadaNum === '1' ? 'Edición 2025' : 'Edición 2026';
 
         incorrectas.sort((a, b) => a.num - b.num).forEach(p => {
             const tr = document.createElement('tr');
