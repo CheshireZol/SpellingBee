@@ -4,7 +4,7 @@
 4|adventure|n. //ədˈven.tʃɚ// an unusual, exciting, and possibly dangerous activity, such as a trip or experience, or the excitement produced by such an activity.
 5|antenna|n. //ænˈten.ə// either of a pair of long, thin organs that are found on the heads of insects and crustaceans.
 6|article|n. //ˈɑːr.tɪ̬.kəl// a piece of writing on a particular subject in a newspaper or magazine, or on the internet.
-7||n. //əˈsɪs.təns// a person who help another person.
+7|asistance|n. //əˈsɪs.təns// a person who help another person.
 8|avocado|n. //ˌɑː.vəˈkɑː.doʊ// a tropical fruit with thick, dark green or purple skin, a large, round seed, and soft, pale green flesh that can be eaten.
 9|ancestor|n. //ˈæn.ses.tɚ// a person related to you who lived a long time ago.
 10|always|adv. //ˈɑːl.weɪz// every time or all the time,
