@@ -1,0 +1,201 @@
+| # | word | type | pronunciation| meaning | dificulty |
+| 1 | adorable | adj. | //əˈdɔːrəbl// | very attractive and easy to feel love for| fácil |
+| 2 | adult | n. | //ˈædʌlt// | a fully grown person who is legally responsible for their actions| fácil |
+| 3 | afraid | adj. | //əˈfreɪd// | feeling fear; frightened because you think that you might be hurt or suffer| fácil |
+| 4 | afternoon | n. | //ˌæftərˈnuːn// | the part of the day from 12 midday until about 6 o’clock| fácil |
+| 5 | agree | v. | //əˈɡriː// | to have the same opinion as somebody; to say that you have the same opinion| fácil |
+| 6 | alien | n. | //ˈeɪliən// | a person who is not a citizen of the country in which they live or work| medio |
+| 7 | amazing | adj. | //əˈmeɪzɪŋ// | very surprising, especially in a way that makes you feel pleasure or admiration| fácil |
+| 8 | ambulance | n. | //ˈæmbjələns// | a vehicle with special equipment, used for taking sick or injured people to a hospital| medio |
+| 9 | anchor | n. | //ˈæŋkər// | a heavy metal object that is attached to a rope or chain and dropped over the side of a ship or boat to keep it in one place| medio |
+| 10 | aquatic | adj. | //əˈkwætɪk// | growing or living in, on or near water| medio |
+| 11 | Astronomy | n. | //əˈstrɑːnəmi// | the scientific study of the sun, moon, stars, planets, etc.| medio |
+| 12 | Azkaban | n. | //əˈzkəban// | high security magical prison| difícil |
+| 13 | barefoot | adj. | //ˈberfʊt// | not wearing anything on your feet| medio |
+| 14 | baseball | n. | //ˈbeɪsbɔːl// | a game played especially in the US by two teams of nine players, using a bat and a ball| fácil |
+| 15 | beautiful | adj. | //ˈbjuːtɪfl// | having beauty; pleasing to the senses or to the mind| fácil |
+| 16 | because | conj. | //bɪˈkɔːz// | for the reason that| fácil |
+| 17 | behind | p. | //bɪˈhaɪnd// | at or towards the back of somebody/something, and often hidden by it or them| fácil |
+| 18 | believe | v. | //bɪˈliːv// | to feel certain that something is true or that somebody is telling you the truth| fácil |
+| 19 | bicycle | n. | //ˈbaɪsɪkl// | a road vehicle with two wheels that you ride by| fácil |
+| 20 | billboard | n. | //ˈbɪlbɔːrd// | a large board on the outside of a building or at the side of the road, used for putting advertisements on| medio |
+| 21 | birthday | n. | //ˈbɜːrθdeɪ// | the day in each year which is the same date as the one on which you were born| fácil |
+| 22 | blind | adj. | //blaɪnd// | not able to see| fácil |
+| 23 | block | n. | //blɑːk// | a large piece of a solid material that is square or rectangular in shape and usually has flat sides| fácil |
+| 24 | bloom | v. | //bluːm// | to produce flowers| medio |
+| 25 | bored | adj. | //bɔːrd// | feeling tired and impatient because you have lost interest in somebody/something or because you have nothing to do| fácil |
+| 26 | borrow | v. | //ˈbɔːroʊ// | to take and use something that belongs to somebody else, and return it to them at a later time| medio |
+| 27 | breakfast | n. | //ˈbrekfəst// | the first meal of the day| fácil |
+| 28 | bridge | n. | //brɪdʒ// | a structure that is built over a road, railway/railroad, river, etc. so that people or vehicles can cross from one side to the other| fácil |
+| 29 | broccoli | n. | //ˈbrɑːkəli// | a vegetable with a thick green stem and several dark green or purple flower heads| difícil |
+| 30 | bucket | n. | //ˈbʌkɪt// | an open container with a handle, used for carrying or holding liquids, sand, etc.| medio |
+| 31 | butter | n. | //ˈbʌtər// | a soft yellow food made from cream, used in cooking and for spreading on bread| fácil |
+| 32 | camel | n. | //ˈkæml// | an animal with a long neck and one or two humps on its back, used in desert countries for riding on or for carrying goods| fácil |
+| 33 | candle | n. | //ˈkændl// | a round stick of wax with a piece of string (called a wick ) through the middle which is lit to give light as it burns| fácil |
+| 34 | celebrate | v. | //ˈselɪbreɪt// | to show that a day or an event is important by doing something special on it| medio |
+| 35 | charm | n. | // tʃɑːrm // | the power of pleasing or attracting people| medio |
+| 36 | children | n. | //ˈtʃɪldrən// | pl. of child: a young human who is not yet an adult| fácil |
+| 37 | China | n. | //ˈtʃaɪnə// | a country in eastern Asia| fácil |
+| 38 | Chinese | adj. | //ˌtʃaɪˈniːz// | from or connected with China| fácil |
+| 39 | choice | n. | //tʃɔɪs// | an act of choosing between two or more possibilities; something that you can choose| medio |
+| 40 | Christmas | n. | //ˈkrɪsməs// | (also Christmas Day) 25 December, the day when Christians celebrate the birth of Christ| fácil |
+| 41 | church | n. | //tʃɜːrtʃ// | a building where Christians go to worship| fácil |
+| 42 | circle | n. | //ˈsɜːrkl// | a completely round flat shape| fácil |
+| 43 | classmate | n. | //ˈklæsmeɪt// | a person who is or was in the same class as you at school or college| fácil |
+| 44 | community | n. | //kəˈmjuːnəti// | all the people who live in a particular area, country, etc. when talked about as a group| medio |
+| 45 | complete | adj. | //kəmˈpliːt// | used when you are emphasizing something, to mean ‘to the greatest degree possible’| medio |
+| 46 | computer | n. | //kəmˈpjuːtər// | an electronic machine that can store, organize and find information, do calculations and control other machines| fácil |
+| 47 | conflict | n. | //ˈkɑːnflɪkt// | a situation in which people, groups or countries are involved in a serious disagreement or argument| medio |
+| 48 | contact | n. | //ˈkɑːntækt// | the act of communicating with somebody, especially regularly| fácil |
+| 49 | cottage | n. | //ˈkɑːtɪdʒ// | a small house, especially in the country| medio |
+| 50 | cotton | n. | //ˈkɑːtn// | a plant grown in warm countries for the soft white hairs around its seeds that are used to make cloth and thread| fácil |
+| 51 | country | n. | //ˈkʌntri// | an area of land that has or used to have its own government and laws| fácil |
+| 52 | coyote | n. | //kaɪˈoʊti// | an American wild animal of the dog family| medio |
+| 53 | crispy | adj. | //ˈkrɪspi// | pleasantly hard and dry| medio |
+| 54 | crossword | n. | //ˈkrɔːswɜːrd// | a game in which you have to fit words across and downwards into spaces with numbers in a square diagram. You find the words by solving clues| medio |
+| 55 | decide | v. | //dɪˈsaɪd// | to think carefully about the different possibilities that are available and choose one of them| fácil |
+| 56 | decorate | v. | //ˈdekəreɪt// | to make something look more attractive by putting things on it| medio |
+| 57 | delicious | adj. | //dɪˈlɪʃəs// | having a very pleasant taste or smell| medio |
+| 58 | dialog | n. | //ˈdaɪəlɔːɡ// | conversations in a book, play, or film/movie| medio |
+| 59 | dinner | n. | //ˈdɪnər// | the main meal of the day, eaten either in the middle of the day or in the evening| fácil |
+| 60 | dinosaur | n. | //ˈdaɪnəsɔːr// | an animal that lived millions of years ago but is now extinct| medio |
+| 61 | disease | n. | //dɪˈziːz// | an illness affecting humans, animals or plants, often caused by infection| difícil |
+| 62 | dolphin | n. | //ˈdɑːlfɪn// | a sea animal (a mammal ) that looks like a large fish with a pointed mouth| fácil |
+| 63 | dragon | n. | //ˈdræɡən// | a large aggressive animal with wings and a long tail, that can breathe out fire| fácil |
+| 64 | drink | v. | //drɪŋk// | to take liquid into your mouth and swallow it| fácil |
+| 65 | drop | v. | //drɑːp// | to fall or allow something to fall by accident| fácil |
+| 66 | Earth | n. | //ɜːrθ// | the world; the planet that we live on| fácil |
+| 67 | Egyptian | n. | //iˈdʒɪpʃn// | ( a person) from Egypt| difícil |
+| 68 | element | n. | //ˈelɪmənt// | a necessary or typical part of something| medio |
+| 69 | England | n. | //ˈɪŋɡlənd// | a country forming the largest and southernmost part of Great Britain and of the United Kingdom, and containing the capital, London| fácil |
+| 70 | enormous | adj. | //ɪˈnɔːrməs// | extremely large| difícil |
+| 71 | entrance | n. | //ˈentrəns// | a door, gate, passage, etc. used for entering a room, building or place| medio |
+| 72 | fantastic | adj. | //fænˈtæstɪk// | extremely good; excellent| fácil |
+| 73 | farmer | n. | //ˈfɑːrmər// | a person who owns or manages a farm| fácil |
+| 74 | father | n. | //ˈfɑːðər// | a male parent of a child or an animal| fácil |
+| 75 | football | n. | //ˈfʊtbɔːl// | a game played by two teams of 11 players, using a ball which players kick up and down the playing field. Teams try to kick the ball into the other team’s goal| fácil |
+| 76 | forest | n. | //ˈfɔːrɪst// | the sound or mark made each time your foot touches the ground when you are walking or running| fácil |
+| 77 | Friday | n. | //ˈfraɪdeɪ// | the day of the week after Thursday and before Saturday| fácil |
+| 78 | friend | n. | //frend// | a person you know well and like, and who is not usually a member of your family| fácil |
+| 79 | future | n. | //ˈfjuːtʃər// | the time that will come after the present or the events that will happen then| fácil |
+| 80 | game | n. | //ɡeɪm// | an activity or a sport with rules in which people or teams compete against each other| fácil |
+| 81 | garage | n. | //ɡəˈrɑːʒ// | a building for keeping one or more cars or other vehicles in| fácil |
+| 82 | genie | n. | //ˈdʒiːni// | a spirit with magic powers, especially one that lives in a bottle or a lamp| medio |
+| 83 | ghost | n. | //ɡoʊst// | the spirit of a dead person that a living person believes they can see or hear| fácil |
+| 84 | giant | n. | //ˈdʒaɪənt// | a very large strong person who is often cruel| fácil |
+| 85 | giraffe | n. | //dʒəˈræf// | a tall African animal with a very long neck, long legs, and dark marks on its coat| medio |
+| 86 | grandma | n. | //ˈɡrænmɑː// | grandmother| fácil |
+| 87 | grandpa | n. | //ˈɡrænpɑː// | grandfather| fácil |
+| 88 | Gryffindor | n. | // ˈɡrɪfɪndɔːr// | Harry´s house at Hogwarts| difícil |
+| 89 | golden | adj. | //ˈɡoʊldən// | made of gold| fácil |
+| 90 | half | n. | //hæf// | either of two equal parts into which something is or can be divided| fácil |
+| 91 | Halloween | n. | //ˌhæloʊˈiːn// | the night of 31st October when it was believed in the past that dead people appeared from their graves, and which is now celebrated in the US, Canada and Britain by children who dress as ghosts, witches, etc.| medio |
+| 92 | hamburger | n. | //ˈhæmbɜːrɡər// | finely chopped beef made into a flat round shape that is then fried, often served in a bread roll| fácil |
+| 93 | help | v. | //help// | to make it easier or possible for somebody to do something by doing something for them or by giving them something that they need| fácil |
+| 94 | hug | v. | //hʌɡ// | to put your arms around somebody and hold them tightly, especially to show that you like or love them| fácil |
+| 95 | huge | adj. | //hjuːdʒ// | extremely large in size or amount; great in degree| fácil |
+| 96 | Hufflepuff | n. | //hʌflpʌf// | a house in Howarts| difícil |
+| 97 | ill | adj. | //ɪl// | suffering from an illness or disease; not feeling well| fácil |
+| 98 | important | adj. | //ɪmˈpɔːrtnt// | having a great effect on people or things; of great value| fácil |
+| 99 | incredible | adj. | //ɪnˈkredəbl// | impossible or very difficult to believe| medio |
+| 100 | interest | n. | //ˈɪntrəst// | wanting to know more| fácil |
+| 101 | inventor | n. | //ɪnˈventər// | a person who has invented something or whose job is inventing things| medio |
+| 102 | Italian | n. | //ɪˈtæliən// | from Italy| medio |
+| 103 | jaguar | n. | //ˈdʒæɡjuər// | a large animal of the cat family that has yellowish-brown fur with black rings and spots. Jaguars live in parts of Central and S America| medio |
+| 104 | knock | v. | //nɑːk// | to hit a door, etc. firmly in order to attract attention| medio |
+| 105 | koala | n. | //koʊˈɑːlə// | an Australian animal with thick grey fur, large ears and no tail. Koalas live in trees and eat leaves| fácil |
+| 106 | layer | n. | //ˈler// | a quantity or thickness of something that lies over a surface or between surfaces| medio |
+| 107 | learn | v. | //lɜːrn// | to gain knowledge or skill by studying, from experience, from being taught, etc.| fácil |
+| 108 | letter | n. | //ˈletər// | a message that is written down or printed on paper and usually put in an envelope and sent to somebody| fácil |
+| 109 | lizard | n. | //ˈlɪzərd// | a small reptile with a rough skin, four short legs and a long tail| medio |
+| 110 | lollipop | n. | //ˈlɑːlipɑːp// | a hard round or flat sweet/candy made of boiled sugar on a small stick| medio |
+| 111 | London | n. | //ˈlʌndən// | the capital city of England and the UK| fácil |
+| 112 | machine | n. | //məˈʃiːn// | a piece of equipment with moving parts that is designed to do a particular job. The power used to work a machine may be electricity, steam, gas, etc. or human power| medio |
+| 113 | magical | adj. | //ˈmædʒɪkl// | containing magic; used in magic| fácil |
+| 114 | material | n. | //məˈtɪriəl// | cloth used for making clothes, curtains, etc.| medio |
+| 115 | memory | n. | //ˈmeməri// | ability to remember| fácil |
+| 116 | mistake | n. | //mɪˈsteɪk// | an action or an opinion that is not correct, or that produces a result that you did not want| fácil |
+| 117 | month | n. | //mʌnθ// | any of the twelve periods of time into which the year is divided, for example May or June| fácil |
+| 118 | mother | n. | //ˈmʌðər// | a female parent of a child or animal; a person who is acting as a mother to a child| fácil |
+| 119 | muggle | n. | /məgls// | a person who does not have magical powers| medio |
+| 120 | music | n. | //ˈmjuːzɪk// | sounds that are arranged in a way that is pleasant or exciting to listen to. People sing music or play it on instruments| fácil |
+| 121 | mystery | n. | //ˈmɪstri// | something that is difficult to understand or to explain| medio |
+| 122 | narration | n. | //nəˈreɪʃn// | the act or process of telling a story, especially in a novel, a film/movie or a play| medio |
+| 123 | nobody | pron. | //ˈnoʊbədi// | no one| fácil |
+| 124 | October | n. | //ɑːkˈtoʊbər// | the 10th month of the year, between September and November| fácil |
+| 125 | offer | v. | //ˈɔːfər// | to say that you are willing to do something for somebody or give something to somebody| fácil |
+| 126 | organize | v. | //ˈɔːrɡənaɪz// | to arrange for something to happen or to be provided| medio |
+| 127 | Patronus | n. | //pəˈtrəˈnus// | Wizards defend themselves against Dementors with a Patronus charm, and Potter conjures a glowing white stag to chase them off.| difícil |
+| 128 | picture | n. | //ˈpɪktʃər// | painting or drawing, etc. that shows a scene, a person or thing| fácil |
+| 129 | pocket | n. | //ˈpɑːkɪt// | in clothing, a small piece of material like a small bag sewn into or onto a piece of clothing so that you can carry things in it| fácil |
+| 130 | poem | n. | //ˈpoʊəm// | a piece of writing in which the words are chosen for their sound and the images they suggest, not just for their obvious meanings| fácil |
+| 131 | Potter | n. | // ˈpɑːtər // | A boy wizard and the hero of a series of widely read fantasies by the British author J. K. Rowling| fácil |
+| 132 | princess | n. | //ˈprɪnses// | a female member of a royal family who is not a queen, especially the daughter or granddaughter of the king or queen| fácil |
+| 133 | pumpkin | n. | //ˈpʌmpkɪn// | a large round vegetable with thick orange skin| medio |
+| 134 | recycle | v. | //ˌriːˈsaɪkl// | to treat things that have already been used so that they can be used again| medio |
+| 135 | remember | v. | //rɪˈmembər// | somebody/something from the past| fácil |
+| 136 | remove | v. | //rɪˈmuːv// | to take something/somebody away from a place| fácil |
+| 137 | result | n. | //rɪˈzʌlt// | caused by something| fácil |
+| 138 | ride | v. | //raɪd// | to sit on a horse, etc. and control it as it moves| fácil |
+| 139 | right | adj. | //raɪt// | true or correct as a fact| fácil |
+| 140 | rocket | n. | //ˈrɑːkɪt// | a spacecraft in the shape of a tube that is driven by a stream of gases let out behind it when fuel is burned inside| fácil |
+| 141 | secret | n. | //ˈsiːkrət// | known about by only a few people; kept hidden from others| fácil |
+| 142 | scissors | n. | //ˈsɪzərz// | a tool for cutting paper or cloth, that has two sharp blades with handles, joined together in the middle| difícil |
+| 143 | signature | n. | //ˈsɪɡnətʃər// | your as you usually write it, for example at the end of a letter| difícil |
+| 144 | situation | n. | //ˌsɪtʃuˈeɪʃn// | all the circumstances and things that are happening at a particular time and in a particular place| medio |
+| 145 | skate | v. | //skeɪt// | to move on skates| fácil |
+| 146 | Slytherin | n. | //ˈslɪˈθerɪŋ// | antagonistic house at Howarts| difícil |
+| 147 | soccer | n. | //ˈsɑːkər// | a game played by two teams of 11 players, using a round ball which players kick up and down the playing field. Teams try to kick the ball into the other team’s goal| fácil |
+| 148 | SortingHat | n. | // ˈsɔːrtɪŋ hæt // | talking hat which puts pupils in a house at Howarts| medio |
+| 149 | station | n. | //ˈsteɪʃn// | a place where trains stop so that passengers can get on and off| fácil |
+| 150 | student | n. | //ˈstuːdnt// | a person who is studying at a school| fácil |
+| 151 | study | n. | //ˈstʌdi// | the activity of learning or gaining knowledge, either from books or by examining things in the world| fácil |
+| 152 | subway | n. | //ˈsʌbweɪ// | an underground railway/railroad system in a city| fácil |
+| 153 | suddenly | adv. | //ˈsʌdənli// | quickly and unexpectedly| medio |
+| 154 | suddenly | adv. | //ˈsʌdənli// | quickly and unexpectedly| medio |
+| 155 | summer | n. | //ˈsʌmər// | the warmest season of the year, coming between spring and autumn/fall| fácil |
+| 156 | sword | n. | //sɔːrd// | a weapon with a long metal blade and a handle| medio |
+| 157 | system | n. | //ˈsɪstəm// | an organized set of ideas or theories or a particular way of doing something| medio |
+| 158 | teacher | n. | //ˈtiːtʃər// | a person whose job is teaching, especially in a school| fácil |
+| 159 | team | n. | //tiːm// | a group of people who play a particular game or sport against another group of people| fácil |
+| 160 | Thursday | n. | //ˈθɜːrzdeɪ// | the day of the week after Wednesday and before Friday| medio |
+| 161 | tie | v. | //taɪ// | to attach or hold two or more things together using string, rope, etc| fácil |
+| 162 | together | adv. | //təˈɡeðər// | with or near to somebody/something else; with each other| fácil |
+| 163 | tooth | n. | //tuːθ// | any of the hard white structures in the mouth used for biting and chewing food| fácil |
+| 164 | toothpaste | n. | //ˈtuːθpeɪst// | a substance that you put on a brush and use to clean your teeth| fácil |
+| 165 | tower | n. | //ˈtaʊər// | a tall narrow building or part of a building, especially of a church or castle| fácil |
+| 166 | trace | v. | //treɪs// | to follow the shape or outline of something| fácil |
+| 167 | travel | v. | //ˈtrævl// | to go from one place to another, especially over a long distance| fácil |
+| 168 | trendy | adj. | //ˈtrendi// | very fashionable| fácil |
+| 169 | trip | n. | //trɪp// | a journey to a place and back again, especially a short one for pleasure or a particular purpose| fácil |
+| 170 | trophy | n. | //ˈtroʊfi// | an object such as a silver cup that is given as a prize for winning a competition| medio |
+| 171 | truck | n. | //trʌk// | a large vehicle for carrying heavy loads by road| fácil |
+| 172 | true | adj. | //truː// | connected with facts rather than things that have been invented or guessed| fácil |
+| 173 | turtle | n. | //ˈtɜːrtl// | a large reptile with a hard round shell, that lives in the sea| fácil |
+| 174 | twin | n. | //twɪn// | one of two children born at the same time to the same mother| fácil |
+| 175 | unfold | v. | //ʌnˈfoʊld// | to spread open or flat something that has previously been folded; to become open and flat| medio |
+| 176 | universe | n. | //ˈjuːnɪvɜːrs// | the whole of space and everything in it, including the earth, the planets and the stars| medio |
+| 177 | untie | v. | //ʌnˈtaɪ// | to undo a knot in something; to undo something that is tied| fácil |
+| 178 | useful | adj. | //ˈjuːsfl// | that can help you to do or achieve what you want| fácil |
+| 179 | vegetables | n. | //ˈvedʒtəbl// | a plant or part of a plant that is eaten as food| medio |
+| 180 | video | n. | //ˈvɪdioʊ// | a system of recording moving pictures and sound, either using videotape or a digital method of storing data| fácil |
+| 181 | visitor | n. | //ˈvɪzɪtər// | a person who visits a person or place| fácil |
+| 182 | vocabulary | n. | //vəˈkæbjəleri// | all the words that a person knows or uses| medio |
+| 183 | wait | v. | //weɪt// | to stay where you are or delay doing something until somebody/something comes or something happens| fácil |
+| 184 | weekend | n. | //ˈwiːkend// | Saturday and Sunday| fácil |
+| 185 | weird | adj. | //wɪrd// | very strange or unusual and difficult to explain| medio |
+| 186 | welcome | intj. | //ˈwelkəm// | used as a greeting to tell somebody that you are pleased that they are there| fácil |
+| 187 | wheel | n. | //wiːl// | one of the round objects under a car, bicycle, bus, etc. that turns when it turns| fácil |
+| 188 | winter | n. | //ˈwɪntər// | the coldest season of the year, between autumn/fall and spring| fácil |
+| 189 | witch | n. | //wɪtʃ// | a woman who is believed to have magic powers, especially to do evil things. In stories, she usually wears a black pointed hat and flies on a broomstick| fácil |
+| 190 | woman | n. | //ˈwʊmən// | an adult female human| fácil |
+| 191 | worried | adj. | //ˈwɜːrid// | thinking about unpleasant things that have happened or that might happen and therefore feeling unhappy and afraid| medio |
+| 192 | wrap | v. | //ræp// | to cover something completely in paper or other material| medio |
+| 193 | wrong | adj. | //rɔːŋ// | not right or correct| fácil |
+| 194 | yard | n. | //jɑːrd// | an area outside a building, usually with a hard surface and a surrounding wall| fácil |
+| 195 | yawn | v. | //jɔːn// | to open your mouth wide and breathe in deeply through it, usually because you are tired or bored| medio |
+| 196 | yell | v. | //jel// | to shout loudly, for example because you are angry, excited, frightened or in pain| fácil |
+| 197 | young | adj. | //jʌŋ// | having lived or existed for only a short time; not fully developed| fácil |
+| 198 | zipper | n. | //ˈzɪpər// | a thing that you use to fasten clothes, bags, etc. It consists of two rows of metal or plastic teeth that you can pull together to close something or pull apart to open it| fácil |
+| 199 | zombie | n. | //ˈzɑːmbi// | dead body that has been made alive again by magic| fácil |
+| 200 | zoo | n. | //ˈzuː// | a place where many kinds of wild animals are kept for the public to see and where they are studied| fácil |
