@@ -3,138 +3,671 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spelling Bee - Pro Dark Edition</title>
+    <title>Spelling Bee - Edición Hechicera</title>
+    <!-- Importar Fuentes Mágicas de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        bgMain: '#0F172A',
-                        cardBg: '#1E293B',
-                        primary: '#6366F1',
-                        primaryHover: '#4F46E5',
-                        success: '#10B981',
-                        error: '#F43F5E',
-                        textMain: '#F8FAFC',
-                        textMuted: '#94A3B8'
+                    fontFamily: {
+                        magic: ['Cinzel', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Variables del Sistema Temático Mágico */
+        :root {
+            --color-bg-start: #06070d;
+            --color-bg-end: #110e1c;
+            --color-primary: #d4af37;
+            --color-primary-rgb: 212, 175, 55;
+            --color-primary-hover: #f3e5ab;
+            --color-card-bg: rgba(18, 16, 28, 0.75);
+            --color-glow: rgba(212, 175, 55, 0.35);
+            --color-text-main: #f8fafc;
+            --color-text-muted: #94a3b8;
+            --house-banner: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            --house-crest: '🏰';
+        }
+
+        .theme-gryffindor {
+            --color-bg-start: #110204;
+            --color-bg-end: #26050b;
+            --color-primary: #e5b73b;
+            --color-primary-rgb: 229, 183, 59;
+            --color-primary-hover: #ffd700;
+            --color-card-bg: rgba(38, 5, 11, 0.78);
+            --color-glow: rgba(229, 183, 59, 0.4);
+            --house-banner: linear-gradient(135deg, #7a0810 0%, #b30f1a 100%);
+            --house-crest: '🦁';
+        }
+
+        .theme-slytherin {
+            --color-bg-start: #010d07;
+            --color-bg-end: #042414;
+            --color-primary: #9eb3c2;
+            --color-primary-rgb: 158, 179, 194;
+            --color-primary-hover: #e0e0e0;
+            --color-card-bg: rgba(4, 36, 20, 0.78);
+            --color-glow: rgba(158, 179, 194, 0.35);
+            --house-banner: linear-gradient(135deg, #09472a 0%, #156d40 100%);
+            --house-crest: '🐍';
+        }
+
+        .theme-ravenclaw {
+            --color-bg-start: #010717;
+            --color-bg-end: #05163a;
+            --color-primary: #cd7f32;
+            --color-primary-rgb: 205, 127, 50;
+            --color-primary-hover: #df9c5c;
+            --color-card-bg: rgba(5, 22, 58, 0.78);
+            --color-glow: rgba(205, 127, 50, 0.4);
+            --house-banner: linear-gradient(135deg, #0b1f38 0%, #173b75 100%);
+            --house-crest: '🦅';
+        }
+
+        .theme-hufflepuff {
+            --color-bg-start: #070603;
+            --color-bg-end: #181508;
+            --color-primary: #eab308;
+            --color-primary-rgb: 234, 179, 8;
+            --color-primary-hover: #fde047;
+            --color-card-bg: rgba(24, 21, 8, 0.8);
+            --color-glow: rgba(234, 179, 8, 0.4);
+            --house-banner: linear-gradient(135deg, #a1780b 0%, #d9a014 100%);
+            --house-crest: '🦡';
+        }
+
+        /* Estilos Globales */
+        body {
+            background: radial-gradient(circle at center, var(--color-bg-start) 0%, var(--color-bg-end) 100%) !important;
+            color: var(--color-text-main);
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .magic-title {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 15px var(--color-glow);
+        }
+
+        .magic-card {
+            background: var(--color-card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px -5px var(--color-glow);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .magic-card:hover {
+            border-color: rgba(var(--color-primary-rgb), 0.4);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.7), 0 0 25px 0 var(--color-glow);
+        }
+
+        /* Varitas y Botones Dorados */
+        .btn-magic {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, var(--color-primary) 0%, rgba(var(--color-primary-rgb), 0.7) 100%);
+            color: #0d0c15;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(var(--color-primary-rgb), 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-magic:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px var(--color-glow);
+            background: linear-gradient(135deg, var(--color-primary-hover) 0%, var(--color-primary) 100%);
+        }
+
+        .btn-magic:active:not(:disabled) {
+            transform: translateY(1px);
+        }
+
+        /* Checkboxes e Inputs Mágicos */
+        .magic-checkbox-label {
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .magic-checkbox-label.checked {
+            border-color: var(--color-primary);
+            background: rgba(var(--color-primary-rgb), 0.1);
+            box-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.2);
+        }
+
+        /* Animación Estrellas Flotantes */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: float-star linear infinite;
+        }
+
+        @keyframes float-star {
+            0% { transform: translateY(105vh) scale(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-5vh) scale(1); opacity: 0; }
+        }
+
+        /* Efecto de Agitación por Error */
+        @keyframes magic-shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .shake-effect {
+            animation: magic-shake 0.4s ease-in-out;
+        }
+
+        /* Efecto Flotante para Elementos Mágicos */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .float-effect {
+            animation: float-gentle 5s ease-in-out infinite;
+        }
+
+        /* Animación del Sombrero Seleccionador */
+        @keyframes hat-talk {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            20% { transform: scale(1.05) rotate(-3deg); }
+            40% { transform: scale(0.98) rotate(3deg); }
+            60% { transform: scale(1.03) rotate(-2deg); }
+            80% { transform: scale(0.99) rotate(2deg); }
+        }
+        .hat-animating {
+            animation: hat-talk 1.2s ease-in-out infinite;
+        }
+
+        /* Transiciones de Pestañas */
+        .tab-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Estilización del Scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(var(--color-primary-rgb), 0.3);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(var(--color-primary-rgb), 0.6);
+        }
+    </style>
 </head>
-<body class="bg-bgMain text-textMain font-sans min-h-screen flex items-center justify-center p-4 sm:p-6">
+<body class="p-4 sm:p-6 md:p-8 flex items-center justify-center min-h-screen relative">
 
-    <div class="w-full max-w-4xl">
+    <!-- Contenedor de Estrellas de Fondo (VFX) -->
+    <div class="stars-container" id="stars-container"></div>
 
-        <div id="view-config" class="block">
-            <h1 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center sm:text-left">Configuración de Práctica</h1>
+    <div class="w-full max-w-4xl z-10 relative">
+
+        <!-- HEADER PRINCIPAL HOGWARTS -->
+        <header class="text-center mb-8">
+            <div class="inline-block relative">
+                <span id="header-house-crest" class="text-4xl sm:text-5xl block mb-2 float-effect">🏰</span>
+                <h1 class="magic-title text-3xl sm:text-4xl md:text-5xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600">
+                    SPELLING BEE
+                </h1>
+                <p class="font-magic text-xs sm:text-sm tracking-widest text-slate-400 mt-1 uppercase" style="color: var(--color-primary)">
+                    Edición del Mundo Mágico
+                </p>
+            </div>
+        </header>
+
+        <!-- PANTALLA 1: CONFIGURACIÓN MÁGICA -->
+        <div id="view-config" class="block space-y-6 sm:space-y-8">
             
-            <div class="bg-cardBg rounded-2xl shadow-xl p-6 sm:p-8 mb-6">
-                <h2 class="text-lg sm:text-xl font-bold text-primary mb-4">1. Selecciona la Edición</h2>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                    <label class="cursor-pointer flex items-center space-x-3">
-                        <input type="radio" name="lista" value="1" checked class="w-5 h-5 text-primary bg-bgMain border-gray-600 focus:ring-primary">
-                        <span class="text-lg">Edición <b>2025</b></span>
-                    </label>
-                    <label class="cursor-pointer flex items-center space-x-3">
-                        <input type="radio" name="lista" value="2" class="w-5 h-5 text-primary bg-bgMain border-gray-600 focus:ring-primary">
-                        <span class="text-lg">Edición <b>2026</b></span>
-                    </label>
+            <!-- BIENVENIDA Y BANNER GENERADO -->
+            <div class="magic-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+                <div class="w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-yellow-500/10 rounded-full blur-2xl"></div>
+                    <img src="spellbook.png" alt="Grimorio de Hogwarts" class="w-full h-full object-contain float-effect filter drop-shadow-[0_0_15px_rgba(212,175,55,0.5)] rounded-2xl">
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h2 class="font-magic text-xl sm:text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
+                        Bienvenido a la Práctica de Encantamientos
+                    </h2>
+                    <p class="text-textMuted text-sm sm:text-base mb-4 leading-relaxed">
+                        Prepara tu varita y afina tu oído. Practica el deletreo de los hechizos, criaturas y conceptos mágicos del colegio Hogwarts. ¡Gana puntos para tu casa y califica para los exámenes T.I.M.O.!
+                    </p>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <button id="btn-biblioteca-abrir" class="px-4 py-2 rounded-lg border border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 text-xs sm:text-sm font-magic transition-colors flex items-center gap-2">
+                            📖 Consultar Grimorio (Biblioteca)
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-cardBg rounded-2xl shadow-xl p-6 sm:p-8 mb-8">
-                <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
-                    <h2 class="text-lg sm:text-xl font-bold text-primary">2. Selecciona las Páginas</h2>
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
-                        <span id="conteo-palabras" class="text-textMuted text-sm sm:text-base">Palabras: 0</span>
-                        <button id="btn-toggle-all" class="text-sm text-primary hover:text-white underline sm:no-underline transition-colors">Marcar/Desmarcar Todo</button>
+            <!-- SELECCIÓN DE CASA DE HOGWARTS -->
+            <div class="magic-card rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+                    <div>
+                        <h3 class="font-magic text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500">
+                            1. Selecciona tu Casa de Hogwarts
+                        </h3>
+                        <p class="text-xs sm:text-sm text-textMuted mt-1">Tu casa definirá el tema visual y recibirá tus puntos ganados.</p>
                     </div>
+                    <button id="btn-sorting-hat" class="px-4 py-2 bg-slate-800/80 border border-slate-700 hover:border-yellow-500/50 text-xs sm:text-sm rounded-xl text-yellow-400 font-magic transition-all flex items-center justify-center gap-2">
+                        <span>🎩</span> ¡Sombrero Seleccionador!
+                    </button>
                 </div>
-                <div id="paginas-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
-                    </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                    <!-- Hogwarts General -->
+                    <button type="button" onclick="selectHouse('hogwarts')" id="card-house-hogwarts" class="house-card magic-card p-4 rounded-2xl flex flex-col items-center justify-center text-center gap-2 border-2 border-yellow-500/40 bg-slate-900/60 transition-all hover:scale-105">
+                        <span class="text-3xl">🏰</span>
+                        <span class="font-magic text-xs sm:text-sm font-semibold text-yellow-500">Hogwarts</span>
+                    </button>
+                    <!-- Gryffindor -->
+                    <button type="button" onclick="selectHouse('gryffindor')" id="card-house-gryffindor" class="house-card magic-card p-4 rounded-2xl flex flex-col items-center justify-center text-center gap-2 border border-slate-800 bg-slate-950/40 transition-all hover:scale-105">
+                        <span class="text-3xl">🦁</span>
+                        <span class="font-magic text-xs sm:text-sm font-semibold text-slate-300">Gryffindor</span>
+                    </button>
+                    <!-- Slytherin -->
+                    <button type="button" onclick="selectHouse('slytherin')" id="card-house-slytherin" class="house-card magic-card p-4 rounded-2xl flex flex-col items-center justify-center text-center gap-2 border border-slate-800 bg-slate-950/40 transition-all hover:scale-105">
+                        <span class="text-3xl">🐍</span>
+                        <span class="font-magic text-xs sm:text-sm font-semibold text-slate-300">Slytherin</span>
+                    </button>
+                    <!-- Ravenclaw -->
+                    <button type="button" onclick="selectHouse('ravenclaw')" id="card-house-ravenclaw" class="house-card magic-card p-4 rounded-2xl flex flex-col items-center justify-center text-center gap-2 border border-slate-800 bg-slate-950/40 transition-all hover:scale-105">
+                        <span class="text-3xl">🦅</span>
+                        <span class="font-magic text-xs sm:text-sm font-semibold text-slate-300">Ravenclaw</span>
+                    </button>
+                    <!-- Hufflepuff -->
+                    <button type="button" onclick="selectHouse('hufflepuff')" id="card-house-hufflepuff" class="house-card magic-card p-4 rounded-2xl flex flex-col items-center justify-center text-center gap-2 border border-slate-800 bg-slate-950/40 transition-all hover:scale-105">
+                        <span class="text-3xl">🦡</span>
+                        <span class="font-magic text-xs sm:text-sm font-semibold text-slate-300">Hufflepuff</span>
+                    </button>
+                </div>
             </div>
 
-            <button id="btn-iniciar" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-4 rounded-xl shadow-lg transition-colors text-lg">
-                Comenzar Práctica
+            <!-- PARTE CENTRAL: EDICIÓN Y MODO DE PRÁCTICA -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- SELECCIONAR EDICIÓN (Lista) -->
+                <div class="magic-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-magic text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500 mb-4">
+                            2. Nivel / Año Académico
+                        </h3>
+                        
+                        <!-- Elementos de entrada de radio ocultos para mantener compatibilidad al 100% -->
+                        <div class="hidden">
+                            <input type="radio" name="lista" id="radio-lista-1" value="1" checked>
+                            <input type="radio" name="lista" id="radio-lista-2" value="2">
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Card Edición 2025 -->
+                            <button type="button" id="btn-edicion-1" class="w-full text-left p-4 rounded-2xl border-2 border-yellow-500/50 bg-yellow-500/5 flex items-start gap-3 transition-all hover:border-yellow-400">
+                                <span class="text-2xl mt-1">📜</span>
+                                <div>
+                                    <h4 class="font-magic text-sm sm:text-base font-bold text-yellow-400">Primer Año: Fundamentos</h4>
+                                    <p class="text-xs text-textMuted mt-1">Lista original de la edición 2025. Hechizos y vocabulario básico del colegio.</p>
+                                </div>
+                            </button>
+                            <!-- Card Edición 2026 -->
+                            <button type="button" id="btn-edicion-2" class="w-full text-left p-4 rounded-2xl border border-slate-800 bg-slate-950/40 flex items-start gap-3 transition-all hover:border-yellow-500/35">
+                                <span class="text-2xl mt-1">🔮</span>
+                                <div>
+                                    <h4 class="font-magic text-sm sm:text-base font-bold text-slate-300">Segundo Año: Encantamientos</h4>
+                                    <p class="text-xs text-textMuted mt-1">Lista avanzada de la edición 2026. Criaturas oscuras y pociones complejas.</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SELECCIONAR MODO DE JUEGO -->
+                <div class="magic-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-magic text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500 mb-4">
+                            3. Modo de Práctica
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Modo Escritura Mágica (Auto-evaluación) -->
+                            <button type="button" id="btn-mode-writing" class="w-full text-left p-4 rounded-2xl border-2 border-yellow-500/50 bg-yellow-500/5 flex items-start gap-3 transition-all hover:border-yellow-400">
+                                <span class="text-2xl mt-1">✍️</span>
+                                <div>
+                                    <h4 class="font-magic text-sm sm:text-base font-bold text-yellow-400">Escritura Mágica (Auto)</h4>
+                                    <p class="text-xs text-textMuted mt-1">Escucha la pronunciación británica nativa del hechizo y escríbelo en el pergamino. ¡Auto-verificación instantánea!</p>
+                                </div>
+                            </button>
+                            <!-- Modo Examinador (Manual) -->
+                            <button type="button" id="btn-mode-examiner" class="w-full text-left p-4 rounded-2xl border border-slate-800 bg-slate-950/40 flex items-start gap-3 transition-all hover:border-yellow-500/35">
+                                <span class="text-2xl mt-1">🎓</span>
+                                <div>
+                                    <h4 class="font-magic text-sm sm:text-base font-bold text-slate-300">Modo Examinador (Manual)</h4>
+                                    <p class="text-xs text-textMuted mt-1">Ideal para practicar con un amigo o tutor que lea y califique tus aciertos en voz alta con los botones.</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPCIONES DE AUDIO Y CONFIGURACIÓN RÁPIDA -->
+            <div class="magic-card rounded-3xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-magic text-sm sm:text-base font-semibold text-yellow-500 mb-3">🔊 Efectos de Sonido del Caldero</h4>
+                    <div class="flex items-center gap-4">
+                        <label class="cursor-pointer flex items-center space-x-3">
+                            <input type="checkbox" id="chk-sound-fx" checked class="w-5 h-5 text-yellow-500 bg-slate-900 border-slate-700 rounded focus:ring-yellow-500">
+                            <span class="text-sm sm:text-base">Habilitar Sonidos Mágicos</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-magic text-sm sm:text-base font-semibold text-yellow-500 mb-3">🎙️ Velocidad de Pronunciación (TTS)</h4>
+                    <div class="flex items-center gap-4">
+                        <label class="cursor-pointer flex items-center space-x-2">
+                            <input type="radio" name="tts-speed" value="1.0" checked class="w-4 h-4 text-yellow-500 bg-slate-900 focus:ring-yellow-500">
+                            <span class="text-xs sm:text-sm">Velocidad Normal</span>
+                        </label>
+                        <label class="cursor-pointer flex items-center space-x-2">
+                            <input type="radio" name="tts-speed" value="0.75" class="w-4 h-4 text-yellow-500 bg-slate-900 focus:ring-yellow-500">
+                            <span class="text-xs sm:text-sm">Velocidad Lenta (Práctica)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SELECCIÓN DE PÁGINAS -->
+            <div class="magic-card rounded-3xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                    <div>
+                        <h3 class="font-magic text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500">
+                            4. Elige los Capítulos / Páginas del Grimorio
+                        </h3>
+                        <p class="text-xs sm:text-sm text-textMuted mt-1">Selecciona páginas específicas o practica el libro completo.</p>
+                    </div>
+                    <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-start">
+                        <span id="conteo-palabras" class="text-yellow-500/80 font-bold bg-yellow-500/10 px-3 py-1 rounded-full text-xs sm:text-sm border border-yellow-500/20">
+                            Palabras: 0
+                        </span>
+                        <button id="btn-toggle-all" class="text-xs sm:text-sm text-yellow-500 hover:text-white underline transition-colors">
+                            Marcar/Desmarcar Todo
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="paginas-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                    <!-- Los checkboxes dinámicos se renderizan aquí -->
+                </div>
+            </div>
+
+            <!-- BOTÓN EMPEZAR -->
+            <button id="btn-iniciar" class="w-full btn-magic py-4 sm:py-5 rounded-2xl text-lg font-black uppercase tracking-widest text-slate-950 flex items-center justify-center gap-3">
+                ⚡ ¡Comenzar Práctica Mágica!
             </button>
         </div>
 
-        <div id="view-juego" class="hidden">
-            <div class="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mb-4 space-y-2 sm:space-y-0">
-                <h2 id="lbl-info-lista" class="text-lg sm:text-xl font-bold text-primary leading-tight">Edición 2025 · Pág. 1 · #1</h2>
-                <span id="lbl-progreso" class="text-base sm:text-lg text-textMuted">Progreso: 1 de 20</span>
+        <!-- PANTALLA 2: ARENA DE JUEGO (JUEGO ACTIVO) -->
+        <div id="view-juego" class="hidden space-y-6">
+            
+            <!-- MARCADOR SUPERIOR -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-slate-950/60 border border-slate-800 rounded-2xl p-4">
+                <div class="flex items-center gap-2">
+                    <span id="juego-house-badge" class="text-2xl">🏰</span>
+                    <div>
+                        <h2 id="lbl-info-lista" class="font-magic text-sm sm:text-base font-bold text-yellow-400 leading-tight">
+                            Edición 2025 · Pág. 1 · #1
+                        </h2>
+                        <p class="text-xs text-textMuted" id="lbl-house-points-tracker">Puntos Acumulados: 0</p>
+                    </div>
+                </div>
+                <div class="text-right w-full sm:w-auto">
+                    <span id="lbl-progreso" class="text-sm font-semibold bg-slate-800 text-slate-200 px-3 py-1.5 rounded-full border border-slate-700">
+                        Progreso: 1 de 20
+                    </span>
+                </div>
             </div>
 
-            <div class="w-full bg-black rounded-full h-2.5 mb-6 sm:mb-8">
-                <div id="progress-bar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+            <!-- BARRA DE MANÁ (PROGRESO) -->
+            <div class="w-full bg-slate-950 rounded-full h-3 border border-slate-800 overflow-hidden p-0.5">
+                <div id="progress-bar" class="bg-gradient-to-r from-yellow-500 to-amber-300 h-full rounded-full transition-all duration-500" style="width: 0%; box-shadow: 0 0 10px var(--color-glow)"></div>
             </div>
 
-            <div class="bg-cardBg rounded-2xl shadow-xl p-6 sm:p-8 mb-8 min-h-[20rem] sm:min-h-[22rem] flex flex-col">
-                
-                <div class="h-24 sm:h-28 flex items-center justify-center w-full">
-                    <h1 id="lbl-palabra" class="text-4xl sm:text-5xl md:text-6xl font-bold break-words w-full select-none">PALABRA</h1>
+            <!-- TARJETA DEL HECHIZO PRINCIPAL -->
+            <div id="game-card" class="magic-card rounded-3xl p-6 sm:p-10 min-h-[22rem] sm:min-h-[25rem] flex flex-col justify-between relative overflow-hidden">
+                <!-- Marca de Agua de Casa de Fondo -->
+                <div class="absolute -right-16 -bottom-16 text-[12rem] opacity-[0.03] select-none pointer-events-none float-effect" id="bg-crest-watermark">🏰</div>
+
+                <!-- Botón de Escuchar Palabra destacado -->
+                <div class="flex justify-center mb-4">
+                    <button id="btn-pronounce-active" class="w-16 h-16 sm:w-20 sm:h-20 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 rounded-full border-2 border-yellow-500/30 hover:border-yellow-400 flex items-center justify-center text-2xl transition-all shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:scale-110 float-effect" title="Escuchar hechizo">
+                        🔊
+                    </button>
+                </div>
+
+                <!-- PALABRA PRINCIPAL (Revelada u Oculta en modo escritura) -->
+                <div class="text-center py-4 flex flex-col items-center justify-center">
+                    <div id="word-hidden-display" class="hidden text-center space-y-2">
+                        <span class="text-5xl block animate-pulse">✨🔮✨</span>
+                        <p class="font-magic text-xs uppercase tracking-widest text-yellow-500/60">Escucha atentamente y deletrea</p>
+                    </div>
+                    
+                    <h1 id="lbl-palabra" class="magic-title text-4xl sm:text-5xl md:text-6xl font-black tracking-wide text-center uppercase select-none w-full break-words text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-200">
+                        PALABRA
+                    </h1>
+                    
+                    <!-- Botón Revelar (Aparecium) para modo examinador u oculto -->
+                    <button id="btn-reveal-word" class="mt-3 px-3 py-1 bg-yellow-500/15 hover:bg-yellow-500/25 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-magic transition-all hover:scale-105">
+                        🪄 Revelar Hechizo (Aparecium)
+                    </button>
                 </div>
                 
-                <div class="border-t border-slate-700/50 my-2 w-11/12 mx-auto"></div>
+                <div class="border-t border-slate-800/80 my-4 w-10/12 mx-auto"></div>
                 
-                <div class="flex-1 flex items-start justify-center pt-4 w-full overflow-y-auto">
-                    <p id="lbl-desc" class="text-base sm:text-lg md:text-xl text-textMuted max-w-2xl leading-relaxed">Descripción</p>
+                <!-- DEFINICIÓN Y FONÉTICA -->
+                <div class="flex-1 flex flex-col items-center justify-start text-center max-w-2xl mx-auto space-y-3">
+                    <p id="lbl-phonetics" class="text-xs sm:text-sm font-semibold font-mono px-3 py-1 bg-slate-950/80 text-yellow-500/80 border border-slate-800 rounded-full">
+                        //əˈdʒen.də//
+                    </p>
+                    <p id="lbl-desc" class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-light">
+                        Descripción de la palabra
+                    </p>
                 </div>
-                
             </div>
 
-            <div class="grid grid-cols-2 gap-4 sm:gap-8 mb-8">
-                <button id="btn-incorrecto" class="bg-error hover:bg-red-600 text-white font-bold py-4 sm:py-6 rounded-xl shadow-lg transition-colors text-lg sm:text-xl flex flex-col items-center justify-center">
-                    <span>Incorrecta</span>
-                    <span class="text-xs sm:text-sm font-normal mt-1">[←] o [2]</span>
+            <!-- CONTROLES MODO 1: MODO EXAMINADOR (MANUAL) -->
+            <div id="controls-examiner" class="grid grid-cols-2 gap-4 sm:gap-6 hidden">
+                <button id="btn-incorrecto" class="bg-gradient-to-br from-red-950 to-red-800 hover:from-red-900 hover:to-red-700 text-white font-bold py-4 sm:py-5 rounded-2xl border border-red-500/30 shadow-lg hover:shadow-red-900/30 transition-all text-base sm:text-lg flex flex-col items-center justify-center gap-1">
+                    <span class="font-magic font-bold tracking-wide">Incorrecta ❌</span>
+                    <span class="text-xs opacity-60 font-light">[←] o [2]</span>
                 </button>
-                <button id="btn-correcto" class="bg-success hover:bg-green-600 text-white font-bold py-4 sm:py-6 rounded-xl shadow-lg transition-colors text-lg sm:text-xl flex flex-col items-center justify-center">
-                    <span>Correcta</span>
-                    <span class="text-xs sm:text-sm font-normal mt-1">[→] o [1]</span>
+                <button id="btn-correcto" class="bg-gradient-to-br from-green-950 to-green-800 hover:from-green-900 hover:to-green-700 text-white font-bold py-4 sm:py-5 rounded-2xl border border-green-500/30 shadow-lg hover:shadow-green-900/30 transition-all text-base sm:text-lg flex flex-col items-center justify-center gap-1">
+                    <span class="font-magic font-bold tracking-wide">Correcta ✨</span>
+                    <span class="text-xs opacity-60 font-light">[→] o [1]</span>
                 </button>
             </div>
 
-            <div class="text-center">
-                <button id="btn-finalizar" class="text-textMuted hover:text-error transition-colors p-2">Finalizar Sesión</button>
+            <!-- CONTROLES MODO 2: ESCRITURA MÁGICA (INPUT DE TEXTO) -->
+            <div id="controls-writing" class="magic-card rounded-3xl p-5 sm:p-6 space-y-4 hidden">
+                <form id="frm-spell" onsubmit="return false;" class="flex flex-col sm:flex-row gap-3">
+                    <input type="text" id="txt-spell-input" placeholder="Escribe el deletreo del hechizo aquí..." class="flex-1 bg-slate-950/80 border-2 border-slate-800 focus:border-yellow-500/60 rounded-xl px-4 py-3 sm:py-4 text-white text-base sm:text-lg placeholder-slate-600 outline-none transition-all tracking-wide" autocomplete="off" spellcheck="false">
+                    
+                    <button type="submit" id="btn-cast-spell" class="btn-magic px-6 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-black flex items-center justify-center gap-2">
+                        🪄 Conjurar
+                    </button>
+                </form>
+
+                <!-- Feedback Visual de Resultados de Escritura -->
+                <div id="spell-feedback" class="hidden text-center py-2 rounded-xl transition-all">
+                    <!-- Mensaje dinámico de acierto/error se inyecta aquí -->
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center px-2">
+                <button id="btn-finalizar" class="text-xs sm:text-sm text-slate-500 hover:text-red-400 transition-colors p-2 bg-transparent border-0 outline-none">
+                    🚪 Finalizar Sesión Anticipadamente
+                </button>
+                <div class="text-xs text-slate-500 font-mono hidden sm:block">
+                    Tip: En Escritura, pulsa <kbd class="bg-slate-800 text-slate-300 px-1 py-0.5 rounded">Enter</kbd> para calificar, o usa la varita para oír.
+                </div>
             </div>
         </div>
 
-        <div id="view-resultados" class="hidden">
-            <h1 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Resultados de la Sesión</h1>
+        <!-- PANTALLA 3: RESULTADOS (COPA DE LAS CASAS) -->
+        <div id="view-resultados" class="hidden space-y-6">
+            <h2 class="magic-title text-center text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 mb-2">
+                🏆 Ceremonia de la Copa de las Casas
+            </h2>
 
-            <div class="bg-cardBg rounded-2xl shadow-xl p-6 sm:p-10 text-center mb-6 sm:mb-8">
-                <h2 id="lbl-porcentaje" class="text-6xl sm:text-7xl font-bold text-success mb-2 sm:mb-4">0%</h2>
-                <p id="lbl-detalle-score" class="text-lg sm:text-xl">Aciertos: 0 • Errores: 0</p>
-            </div>
+            <div class="magic-card rounded-3xl p-6 sm:p-10 text-center mb-6 sm:mb-8 space-y-6 relative overflow-hidden">
+                <!-- Destellos Mágicos de Fondo -->
+                <div class="absolute inset-0 bg-gradient-to-t from-yellow-500/5 to-transparent pointer-events-none"></div>
 
-            <div id="refuerzo-container" class="mb-6 sm:mb-8 hidden">
-                <h2 class="text-lg sm:text-xl font-bold text-error mb-4">Lista de Refuerzo:</h2>
-                <div class="bg-cardBg rounded-xl shadow-lg overflow-x-auto">
-                    <table class="w-full text-left min-w-[500px]">
-                        <thead class="bg-black/50 text-textMuted">
-                            <tr>
-                                <th class="py-3 px-4 text-center">Lista</th>
-                                <th class="py-3 px-4 text-center">Página</th>
-                                <th class="py-3 px-4 text-center">Línea #</th>
-                                <th class="py-3 px-4 text-center">Palabra</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabla-refuerzo" class="divide-y divide-gray-700">
-                            </tbody>
-                    </table>
+                <!-- Ícono / Cresta del Éxito -->
+                <div class="text-6xl sm:text-7xl md:text-8xl inline-block float-effect mb-2" id="results-crest">
+                    🏆
+                </div>
+
+                <div class="space-y-1">
+                    <h3 id="lbl-rango-mago" class="font-magic text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-600">
+                        MAGO SUPREMO
+                    </h3>
+                    <p class="text-xs sm:text-sm text-textMuted uppercase tracking-widest">Rango de Calificación Obtenido</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto py-2">
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-4">
+                        <span class="text-xs sm:text-sm text-textMuted block">Porcentaje de Precisión</span>
+                        <h4 id="lbl-porcentaje" class="text-4xl sm:text-5xl font-black text-green-400 mt-1">0%</h4>
+                    </div>
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-4 flex flex-col justify-center">
+                        <span class="text-xs sm:text-sm text-textMuted block">Calificación de Aciertos</span>
+                        <p id="lbl-detalle-score" class="text-sm sm:text-base font-bold mt-2">Aciertos: 0 • Errores: 0</p>
+                        <p id="lbl-house-points-won" class="text-xs text-yellow-500 font-magic mt-1 font-semibold">+0 Puntos de Casa</p>
+                    </div>
                 </div>
             </div>
 
-            <button id="btn-reiniciar" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-4 rounded-xl shadow-lg transition-colors text-lg">
-                Volver al Menú
+            <!-- CONTENEDOR DE REFUERZO (LISTA DE PALABRAS INCORRECTAS) -->
+            <div id="refuerzo-container" class="mb-6 sm:mb-8 hidden">
+                <h2 class="font-magic text-lg sm:text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
+                    📖 Grimorio de Refuerzo <span class="text-xs font-mono font-light text-slate-500">(Palabras que fallaste para estudiar)</span>
+                </h2>
+                
+                <div class="magic-card rounded-2xl overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left min-w-[500px]">
+                            <thead class="bg-slate-950/80 text-slate-400 font-magic text-xs uppercase tracking-wider">
+                                <tr>
+                                    <th class="py-4 px-4 text-center">Nivel / Lista</th>
+                                    <th class="py-4 px-4 text-center">Página</th>
+                                    <th class="py-4 px-4 text-center">Nro</th>
+                                    <th class="py-4 px-4 text-center">Palabra Escrita</th>
+                                    <th class="py-4 px-4 text-center">Pronunciación</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-refuerzo" class="divide-y divide-slate-800 text-sm">
+                                <!-- Las palabras incorrectas se inyectan dinámicamente aquí -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTONES DE NAVEGACIÓN EN RESULTADOS -->
+            <button id="btn-reiniciar" class="w-full btn-magic py-4 rounded-2xl text-lg font-black uppercase tracking-widest text-slate-950">
+                🔮 Volver al Menú Principal (Hogwarts)
             </button>
         </div>
 
     </div>
 
+    <!-- BIBLIOTECA MODAL DE CONSULTA (WORD EXPLORER) -->
+    <div id="modal-biblioteca" class="fixed inset-0 bg-slate-950/90 z-50 flex items-center justify-center p-4 backdrop-filter backdrop-blur-md hidden transition-all duration-300">
+        <div class="magic-card w-full max-w-4xl h-[85vh] rounded-3xl flex flex-col overflow-hidden border-2 border-yellow-500/25">
+            <!-- Header Modal -->
+            <div class="p-6 bg-slate-950/80 border-b border-slate-800 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">📚</span>
+                    <div>
+                        <h3 class="font-magic text-xl font-bold text-yellow-500">Grimorio de Biblioteca de Hogwarts</h3>
+                        <p class="text-xs text-textMuted">Consulta y estudia todas las palabras de las listas de práctica.</p>
+                    </div>
+                </div>
+                <button id="btn-biblioteca-cerrar" class="w-10 h-10 bg-slate-900 border border-slate-800 hover:border-yellow-500/50 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-all text-xl">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Filtros Modal -->
+            <div class="p-4 sm:p-6 bg-slate-900/40 border-b border-slate-800/60 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                <!-- Selector de Lista -->
+                <div class="flex gap-2 w-full sm:w-auto">
+                    <button id="btn-lib-ed-1" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-magic border-2 border-yellow-500/50 bg-yellow-500/10 text-yellow-400">
+                        Primer Año
+                    </button>
+                    <button id="btn-lib-ed-2" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-magic border border-slate-800 bg-slate-950 text-slate-400">
+                        Segundo Año
+                    </button>
+                </div>
+
+                <!-- Buscador de Palabras -->
+                <div class="relative w-full sm:w-72">
+                    <span class="absolute left-3 top-2.5 text-slate-600">🔍</span>
+                    <input type="text" id="txt-lib-search" placeholder="Buscar hechizo..." class="w-full bg-slate-950 border border-slate-800 focus:border-yellow-500/50 rounded-xl pl-9 pr-4 py-2 text-sm text-white placeholder-slate-600 outline-none transition-all">
+                </div>
+            </div>
+
+            <!-- Listado Modal -->
+            <div class="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-950/30">
+                <div id="lib-word-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Las tarjetas de palabras se inyectan dinámicamente aquí -->
+                </div>
+            </div>
+            
+            <!-- Footer Modal -->
+            <div class="p-4 bg-slate-950/80 border-t border-slate-800 text-center text-xs text-textMuted">
+                Selecciona la lista y busca palabras. Pulsa el altavoz para escuchar la correcta entonación mágica.
+            </div>
+        </div>
+    </div>
+
+    <!-- AUDIO ELEMENTOS (Manteniendo soporte para cualquier llamada HTML5, si bien ahora usamos el potente Web Audio API) -->
+    <!-- SCRIPTS -->
     <script src="app.js"></script>
 </body>
 </html>
