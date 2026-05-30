@@ -74,8 +74,8 @@
 | 73 | forget | n. | //fɚˈɡet// | to not bring something with you because you did not remember it. | fácil |
 | 74 | fancy | adj. | //ˈfæn.si// | decorative or complicated. | medio |
 | 75 | field | n. | //fiːld// | an area of land, used for growing crops or keeping animals, usually surrounded by a fence. | medio |
-| 76 | gorgeous | adj. | //ˈɡɔːr.dʒəs// | very beautiful or pleasant. | medio |
-| 77 | generous | adj. | //ˈdʒen.ər.əs// | willing to give money, help, kindness, etc. | medio |
+| 76 | gorgeous | adj. | //ˈɡɔːr.dʒəs// | very beautiful or pleasant. | difícil |
+| 77 | generous | adj. | //ˈdʒen.ər.əs// | willing to give money, help, kindness, etc. | difícil |
 | 78 | guarantee | n. | //ˌɡer.ənˈtiː// | a promise that something will be done or will happen. | difícil |
 | 79 | government | n. | //ˈɡʌv.ɚn.mən// | the group of people who officially control a country. | medio |
 | 80 | ground | n. | //ɡraʊnd// | the surface of Earth that you walk on. | fácil |
@@ -100,17 +100,17 @@
 | 99 | history | n. | //ˈhɪs.tɚ̬.i// | past events considered together, especially events of a particular period, country, or subject. | fácil |
 | 100 | heaven | n. | //ˈhev.ən// | in some religions, the place, sometimes imagined to be in the sky. | medio |
 | 101 | industry | n. | //ˈɪn.də.stri// | he companies and activities involved in the process of producing goods for sale, especially in a factory or special area. | medio |
-| 102 | impressive | n. | //ɪmˈpres.ɪv// | usually because it is special, important. | medio |
+| 102 | impressive | n. | //ɪmˈpres.ɪv// | usually because it is special, important. | difícil |
 | 103 | imagination | n. | //ɪˌmædʒ.əˈneɪ.ʃən// | the ability to form pictures in the mind. | medio |
 | 104 | interesting | adj. | //ˈɪn.trɪ.stɪŋ// | Someone or something that is interesting keeps your attention because he, she, or it is unusual, exciting, or has a lot of ideas. | fácil |
-| 105 | independence | n. | //ˌɪn.dɪˈpen.dəns// | freedom from being governed or ruled by another country. | medio |
+| 105 | independence | n. | //ˌɪn.dɪˈpen.dəns// | freedom from being governed or ruled by another country. | difícil |
 | 106 | ingredient | n. | //ɪnˈɡriː.di.ənt// | a food that is used with other foods in the preparation of a particular dish. | medio |
 | 107 | inside | v. | //ɪnˈsaɪd// | a person's or animal's internal organs, especially the stomach or bowels. | fácil |
 | 108 | January | n. | //ˈdʒæn.ju.er.i// | the first month of the year, after December and before February. | fácil |
 | 109 | junior | n. | //ˈdʒuː.njɚ// | a student at a junior school. | fácil |
 | 110 | jigsaw | n. | //ˈdʒɪɡ.sɑː// | a puzzle that makes a picture. | medio |
 | 111 | journal | n. | //ˈdʒɝː.nəl// | a regularly published magazine or newspaper on a particular subject. | medio |
-| 112 | jealous | n. | //ˈdʒel.əs// | upset and angry because someone that you love seems interested in another person. | medio |
+| 112 | jealous | n. | //ˈdʒel.əs// | upset and angry because someone that you love seems interested in another person. | difícil |
 | 113 | justice | adj. | //ˈdʒʌs.tɪs// | fairness in the way people are dealt with. | medio |
 | 114 | kingdom | n. | //ˈkɪŋ.dəm// | a country ruled by a king or queen. | medio |
 | 115 | kangaroo | n. | //ˌkæŋ.ɡəˈruː// | a large Australian mammal with a long stiff tail, short front legs and long powerful back legs on which it moves by jumping. | fácil |
@@ -165,7 +165,7 @@
 | 164 | telescope | n. | //ˈtel.ə.skoʊp// | a cylinder-shaped device for making objects that are far away look closer and larger, using a combination of lenses, or lenses and curved mirrors. | medio |
 | 165 | tadpole | n. | //ˈtæd.poʊl// | a small, black creature with a large head and long tail that lives in water and develops into a frog or toad. | difícil |
 | 166 | thankful | adj. | //ˈθæŋk.fə// | happy or grateful because of something. | medio |
-| 167 | toothbrush | n. | //ˈtuːθ.brʌ// | a small brush with a long handle that you use to clean your teeth. | fácil |
+| 167 | toothbrush | n. | //ˈtuːθ.brʌ// | a small brush with a long handle that you use to clean your teeth. | difícil |
 | 168 | timetable | n. | //ˈtaɪmˌteɪ.bəl// | a detailed plan showing when events or activities will happen. | medio |
 | 169 | talent | n. | //ˈtæl.ənt// | a natural ability to be good at something, especially without being taught. | fácil |
 | 170 | trophy | n. | //ˈtroʊfi// | an object such as a silver cup that is given as a prize for winning a competition | medio |
@@ -175,7 +175,7 @@
 | 174 | tongue | n. | //tʌŋ// | the large, soft piece of flesh in the mouth that you can move, and is used for tasting, speaking, etc. | medio |
 | 175 | uncle | v. | //ˈʌŋ.kə// | the brother of someone's mother or father, or the husband of someone's aunt or uncle. | fácil |
 | 176 | uniform | n. | //ˈjuː.nə.fɔːrm// | a particular set of clothes that has to be worn by the members of the same organization or group of people. | fácil |
-| 177 | unique | v. | //juːˈniːk// | being the only existing one of its type or, more generally, unusual, or special in some way. | medio |
+| 177 | unique | v. | //juːˈniːk// | being the only existing one of its type or, more generally, unusual, or special in some way. | difícil |
 | 178 | useful | adj. | //ˈjuːs.fəl// | effective; helping you to do or achieve something. | fácil |
 | 179 | visit | n. | //ˈvɪz.ɪt// | to go to a place in order to look at it, or to a person in order to spend time with them. | fácil |
 | 180 | voice | n. | //vɔɪ// | the sounds that are made when people speak or sing. | fácil |
