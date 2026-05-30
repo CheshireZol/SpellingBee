@@ -192,11 +192,11 @@ const WizardTTS = {
 // 🧙‍♂️ 3. CONSTANTES Y VARIABLES DE ESTADO
 // ==========================================
 const HOUSE_CRESTS = {
-    hogwarts: '🏰',
-    gryffindor: '🦁',
-    slytherin: '🐍',
-    ravenclaw: '🦅',
-    hufflepuff: '🦡'
+    hogwarts: 'multimedia/Hogwarts_logo.png',
+    gryffindor: 'multimedia/Gryffindor_logo.png',
+    slytherin: 'multimedia/Slytherin_logo.png',
+    ravenclaw: 'multimedia/Ravenclaw_logo.png',
+    hufflepuff: 'multimedia/Hufflepuff_logo.png'
 };
 
 const HOUSE_NAMES_ES = {
@@ -494,11 +494,11 @@ window.selectHouse = function(houseName, playSound = true) {
     }
 
     // Cambiar ícono del escudo en el cabezal principal
-    headerHouseCrest.innerText = HOUSE_CRESTS[houseName];
+    headerHouseCrest.src = HOUSE_CRESTS[houseName];
 
     // Sincronizar en el juego activo si está cargado
-    if (juegoHouseBadge) juegoHouseBadge.innerText = HOUSE_CRESTS[houseName];
-    if (bgCrestWatermark) bgCrestWatermark.innerText = HOUSE_CRESTS[houseName];
+    if (juegoHouseBadge) juegoHouseBadge.src = HOUSE_CRESTS[houseName];
+    if (bgCrestWatermark) bgCrestWatermark.src = HOUSE_CRESTS[houseName];
     
     actualizarMarcadorPuntos();
     guardarPreferencias();
@@ -548,13 +548,13 @@ document.getElementById('btn-sorting-hat').addEventListener('click', () => {
             const name = HOUSE_NAMES_ES[chosenHouse].toUpperCase();
             
             overlay.innerHTML = `
-                <div class="max-w-md space-y-6 animate-scale">
-                    <span class="text-8xl block float-effect">${crest}</span>
+                <div class="max-w-md space-y-6 animate-scale flex flex-col items-center">
+                    <img src="${crest}" class="w-32 h-32 object-contain float-effect filter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" alt="${name}">
                     <h2 class="font-magic text-3xl sm:text-4xl font-black text-yellow-400 tracking-wider">¡${name}!</h2>
                     <p class="text-slate-300 font-light px-4 leading-relaxed">
                         ¡El Sombrero Seleccionador te ha asignado formalmente a la noble casa de <b>${HOUSE_NAMES_ES[chosenHouse]}</b> por tus excepcionales dotes de deletreo!
                     </p>
-                    <button id="btn-accept-sorting" class="btn-magic px-8 py-3 rounded-xl font-bold uppercase tracking-wider text-slate-950">
+                    <button id="btn-accept-sorting" class="btn-magic px-8 py-3 rounded-xl font-bold uppercase tracking-wider text-slate-950 mt-2">
                         Entrar a la Sala Común
                     </button>
                 </div>
@@ -1159,8 +1159,8 @@ function mostrarResultados() {
         emojiCrest = '🪣🐸';
     }
 
-    lblRangoMago.innerText = rangoMago;
-    resultsCrest.innerText = emojiCrest;
+    lblRangoMago.innerText = `${emojiCrest} ${rangoMago}`;
+    resultsCrest.src = HOUSE_CRESTS[selectedHouse];
 
     // Tocar sonido ceremonioso
     if (porcentaje >= 75) {
