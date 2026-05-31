@@ -518,7 +518,10 @@ document.getElementById('btn-sorting-hat').addEventListener('click', () => {
     overlay.className = 'fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md transition-all duration-300';
     overlay.innerHTML = `
         <div class="max-w-md space-y-6 flex flex-col items-center">
-            <img src="multimedia/Sorting hat_logo.png" class="w-24 h-24 object-contain animate-bounce" alt="Sombrero Seleccionador">
+            <div class="relative w-32 h-32 flex items-center justify-center mb-2">
+                <div class="absolute inset-0 rounded-full bg-yellow-500/25 blur-2xl animate-hat-glow"></div>
+                <img src="multimedia/Sorting hat_logo.png" class="w-24 h-24 object-contain z-10 float-effect" alt="Sombrero Seleccionador">
+            </div>
             <h2 class="font-magic text-2xl sm:text-3xl font-black text-yellow-500 animate-pulse text-center">¡El Sombrero Seleccionador piensa!</h2>
             <div class="border border-yellow-500/30 p-6 rounded-2xl bg-slate-950/80 font-mono text-sm leading-relaxed text-slate-300" id="hat-thinking-text">
                 "Veo coraje... una mente brillante también... oh, y una tremenda sed por demostrar tu deletreo..."
@@ -571,7 +574,7 @@ document.getElementById('btn-sorting-hat').addEventListener('click', () => {
                 MagicAudio.playSpellCast();
             });
         }
-    }, 1200);
+    }, 3500);
 });
 
 // ==========================================
