@@ -1463,15 +1463,15 @@ function evaluarEscrituraMagica() {
     }
 
     txtSpellInput.disabled = true;
-    document.getElementById('btn-cast-spell').style.display = 'none';
-    
-    // Revelar la palabra correcta de fondo en el pergamino
-    revelarPalabraManual();
+    const btnCast = document.getElementById('btn-cast-spell');
 
     if (userSpelling === correctSpelling) {
         // Acierto!
         correctas.push(wordObj);
         
+        // Revelar la palabra correcta de fondo en el pergamino
+        revelarPalabraManual();
+
         // Sumar puntos e incremental por racha
         streak++;
         if (streak > maxStreak) maxStreak = streak;
@@ -1482,8 +1482,22 @@ function evaluarEscrituraMagica() {
         // Sonido y feedback visual
         MagicAudio.playSuccess();
         spellFeedback.className = "block bg-green-500/15 border border-green-500/30 text-green-400 py-3 px-4 rounded-xl text-sm font-semibold animate-pulse";
-        spellFeedback.innerHTML = `✨ <b>¡Excelente conjuro!</b> Deletreado correctamente. <span class="text-white">+${ptsGained} Pts</span>`;
+        spellFeedback.innerHTML = `<b>¡Hechizo correcto!</b> <span class="text-white">+${ptsGained} Pts</span>`;
         spellFeedback.classList.remove('hidden');
+
+        // Poner botón verde con "Correcto" por 500ms
+        btnCast.innerText = "Correcto";
+        btnCast.style.background = "#22c55e";
+        btnCast.style.color = "#ffffff";
+        btnCast.disabled = true;
+
+        setTimeout(() => {
+            btnCast.style.display = 'none';
+            btnCast.innerText = "Conjurar";
+            btnCast.style.background = "";
+            btnCast.style.color = "";
+            btnCast.disabled = false;
+        }, 500);
 
         // Avanzar automáticamente después de 1.6 segundos
         setTimeout(() => {
@@ -1493,7 +1507,7 @@ function evaluarEscrituraMagica() {
 
     } else {
         // Error!
-        incorrectas.push(wordObj);
+        incorrectas.push({ ...wordObj, intentoUsuario: userSpelling });
         streak = 0;
         actualizarMarcadorPuntos();
 
@@ -1505,23 +1519,29 @@ function evaluarEscrituraMagica() {
         MagicAudio.playError();
         txtSpellInput.className = "flex-1 bg-slate-950/80 border-2 border-red-500/60 rounded-xl px-4 py-3 sm:py-4 text-red-300 text-base sm:text-lg placeholder-slate-600 outline-none transition-all tracking-wide";
         
-        spellFeedback.className = "block bg-red-500/15 border border-red-500/30 text-red-400 py-3 px-4 rounded-xl text-sm leading-relaxed";
-        
-        // Generar comparación letra por letra para feedback educativo premium
-        const diffHTML = resaltarDiferenciasSpell(userSpelling, correctSpelling);
-        spellFeedback.innerHTML = `⚠️ <b>Hechizo fallido...</b> Escribiste: <span class="line-through text-red-300">${diffHTML}</span><br>Pulsa el botón de abajo para seguir practicando.`;
+        spellFeedback.className = "block bg-red-500/15 border border-red-500/30 text-red-400 py-3 px-4 rounded-xl text-sm font-semibold animate-pulse";
+        spellFeedback.innerHTML = `<b>Hechizo fallido...</b>`;
         spellFeedback.classList.remove('hidden');
 
-        // Mostrar un botón temporal de "Siguiente Hechizo" para darle control al estudiante
-        const btnNext = document.createElement('button');
-        btnNext.className = "w-full btn-magic mt-3 py-2 rounded-xl text-sm font-semibold uppercase tracking-wider text-slate-950 flex items-center justify-center gap-2";
-        btnNext.innerHTML = "Continuar ➡️";
-        btnNext.addEventListener('click', () => {
-            MagicAudio.playClick();
+        // Poner botón rojo con "Incorrecto" por 500ms
+        btnCast.innerText = "Incorrecto";
+        btnCast.style.background = "#dc2626";
+        btnCast.style.color = "#ffffff";
+        btnCast.disabled = true;
+
+        setTimeout(() => {
+            btnCast.style.display = 'none';
+            btnCast.innerText = "Conjurar";
+            btnCast.style.background = "";
+            btnCast.style.color = "";
+            btnCast.disabled = false;
+        }, 500);
+
+        // Avanzar automáticamente después de 1.6 segundos
+        setTimeout(() => {
             indice++;
             mostrarSiguiente();
-        });
-        spellFeedback.appendChild(btnNext);
+        }, 1600);
     }
     
     guardarPreferencias();
@@ -1660,8 +1680,16 @@ function mostrarResultados() {
             tdNum.innerText = `#${p.num}`;
 
             const tdWord = document.createElement('td');
-            tdWord.className = "py-4 px-4 border-t border-slate-800 font-bold text-center text-yellow-400";
+            tdWord.className = "py-4 px-4 border-t border-slate-800 font-bold text-center text-emerald-400";
             tdWord.innerText = p.palabra;
+
+            const tdWritten = document.createElement('td');
+            tdWritten.className = "py-4 px-4 border-t border-slate-800 font-bold text-center font-mono";
+            if (p.intentoUsuario !== undefined) {
+                tdWritten.innerHTML = resaltarDiferenciasSpell(p.intentoUsuario, p.palabra);
+            } else {
+                tdWritten.innerHTML = `<span class="text-slate-500 font-light italic">Manual</span>`;
+            }
 
             const tdAudio = document.createElement('td');
             tdAudio.className = "py-4 px-4 border-t border-slate-800 flex justify-center items-center";
@@ -1671,6 +1699,7 @@ function mostrarResultados() {
             tr.appendChild(tdPag);
             tr.appendChild(tdNum);
             tr.appendChild(tdWord);
+            tr.appendChild(tdWritten);
             tr.appendChild(tdAudio);
 
             tablaRefuerzo.appendChild(tr);

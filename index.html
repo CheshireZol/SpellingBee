@@ -527,7 +527,7 @@
                 <!-- PALABRA PRINCIPAL (Revelada u Oculta en modo escritura) -->
                 <div class="text-center py-4 flex flex-col items-center justify-center">
                     <div id="word-hidden-display" class="hidden text-center space-y-2">
-                        <span class="text-5xl block animate-pulse">✨🔮✨</span>
+                        <span class="text-5xl block animate-pulse"></span>
                         <p class="font-magic text-xs uppercase tracking-widest text-yellow-500/60">Escucha atentamente y deletrea</p>
                     </div>
                     
@@ -540,7 +540,7 @@
                     
                     <!-- Botón Revelar (Aparecium) para modo examinador u oculto -->
                     <button id="btn-reveal-word" class="mt-3 px-3 py-1 bg-yellow-500/15 hover:bg-yellow-500/25 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-magic transition-all hover:scale-105">
-                        🪄 Revelar Hechizo (Aparecium)
+                        Revelar Hechizo (Aparecium)
                     </button>
                 </div>
                 
@@ -573,7 +573,7 @@
                     <input type="text" id="txt-spell-input" placeholder="Escribe el deletreo del hechizo aquí..." class="flex-1 bg-slate-950/80 border-2 border-slate-800 focus:border-yellow-500/60 rounded-xl px-4 py-3 sm:py-4 text-white text-base sm:text-lg placeholder-slate-600 outline-none transition-all tracking-wide" autocomplete="off" spellcheck="false">
                     
                     <button type="submit" id="btn-cast-spell" class="btn-magic px-6 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-black flex items-center justify-center gap-2">
-                        🪄 Conjurar
+                        Conjurar
                     </button>
                 </form>
 
@@ -635,12 +635,13 @@
                 
                 <div class="magic-card rounded-2xl overflow-hidden">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left min-w-[500px]">
+                        <table class="w-full text-left min-w-[550px]">
                             <thead class="bg-slate-950/80 text-slate-400 font-magic text-xs uppercase tracking-wider">
                                 <tr>
                                     <th class="py-4 px-4 text-center">Nivel / Lista</th>
                                     <th class="py-4 px-4 text-center">Página</th>
                                     <th class="py-4 px-4 text-center">Nro</th>
+                                    <th class="py-4 px-4 text-center">Palabra Correcta</th>
                                     <th class="py-4 px-4 text-center">Palabra Escrita</th>
                                     <th class="py-4 px-4 text-center">Pronunciación</th>
                                 </tr>
