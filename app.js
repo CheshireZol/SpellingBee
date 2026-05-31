@@ -513,42 +513,62 @@ document.getElementById('btn-sorting-hat').addEventListener('click', () => {
     // Inyectar clase de animación flotante pesada al escudo
     headerHouseCrest.classList.add('hat-animating');
     
+    // Decisión final del sombrero desde el inicio
+    const houseList = ['gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff'];
+    const chosenHouse = houseList[Math.floor(Math.random() * houseList.length)];
+    
+    const houseQuotes = {
+        gryffindor: [
+            "\"Mmm… no espera a sentirse listo. Salta primero, piensa después… peligroso, sí, pero también admirable.\"",
+            "\"Hay palabras que hacen dudar a cualquiera. A este no. Este las mira como si fueran dragones pequeños.\"",
+            "\"No le asusta fallar frente a todos; le asusta no intentarlo. Demasiado corazón, demasiada chispa… esto apunta a un lugar claro.\""
+        ],
+        ravenclaw: [
+            "\"Silencio… está escuchando la palabra por dentro. No la repite: la desarma.\"",
+            "\"Curioso caso. Donde otros oyen sonidos, aquí hay patrones, raíces, pistas… una mente que no se conforma.\"",
+            "\"Podría responder rápido, pero prefiere pensar bien. Paciencia mental, ojos atentos, hambre de entender… difícil ignorarlo.\""
+        ],
+        hufflepuff: [
+            "\"Ah, esto es distinto. No hay prisa, no hay arrogancia… solo una voluntad tranquila que no se rompe fácil.\"",
+            "\"Letra por letra. Sin presumir. Sin rendirse. Así se construyen las victorias que nadie ve venir.\"",
+            "\"No teme al trabajo duro; de hecho, parece conocerlo bien. Paciente, honesto, firme cuando importa… la decisión es clara.\""
+        ],
+        slytherin: [
+            "\"Interesante… no está jugando solo para participar. Ya está calculando cómo ganar.\"",
+            "\"Sabe cuándo esperar, cuándo arriesgar y cuándo callar. Eso no es suerte; eso es instinto.\"",
+            "\"No le incomoda la presión; la convierte en ventaja. Ambición, control, mirada afilada… sí, aquí hay intención de victoria.\""
+        ]
+    };
+    
+    const quotes = houseQuotes[chosenHouse];
+    
     // Crear una superposición modal mágica momentánea del sombrero
     const overlay = document.createElement('div');
     overlay.className = 'fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center p-6 text-center backdrop-blur-md transition-all duration-300';
     overlay.innerHTML = `
         <div class="max-w-md space-y-6 flex flex-col items-center">
             <div class="relative w-32 h-32 flex items-center justify-center mb-2">
-                <div class="absolute inset-0 rounded-full bg-yellow-500/25 blur-2xl animate-hat-glow"></div>
+                <div class="absolute inset-0 rounded-full bg-yellow-500/20 blur-2xl animate-hat-glow"></div>
                 <img src="multimedia/Sorting hat_logo.png" class="w-24 h-24 object-contain z-10 float-effect" alt="Sombrero Seleccionador">
             </div>
             <h2 class="font-magic text-2xl sm:text-3xl font-black text-yellow-500 animate-pulse text-center">¡El Sombrero Seleccionador piensa!</h2>
             <div class="border border-yellow-500/30 p-6 rounded-2xl bg-slate-950/80 font-mono text-sm leading-relaxed text-slate-300" id="hat-thinking-text">
-                "Veo coraje... una mente brillante también... oh, y una tremenda sed por demostrar tu deletreo..."
+                ${quotes[0]}
             </div>
         </div>
     `;
     document.body.appendChild(overlay);
 
-    const houseList = ['gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff'];
-    const thinkingQuotes = [
-        "\"¡Difícil elección! Hay una gran lealtad aquí... y un espíritu inquebrantable...\"",
-        "\"¡Ah! Ingenio, veo astucia y un deseo ardiente por deletrear las palabras de poder...\"",
-        "\"¡Una inteligencia filosa! Curioso de los libros y sabio de las fonéticas...\"",
-        "\"¡Vaya, vaya! No teme al trabajo duro, paciente, honesto... ¿dónde te pondré?\""
-    ];
-
     let step = 0;
     const interval = setInterval(() => {
         step++;
         if (step < 3) {
-            document.getElementById('hat-thinking-text').innerText = thinkingQuotes[Math.floor(Math.random() * thinkingQuotes.length)];
+            document.getElementById('hat-thinking-text').innerText = quotes[step];
             MagicAudio.playClick();
         } else {
             clearInterval(interval);
             
             // Decisión final del sombrero
-            const chosenHouse = houseList[Math.floor(Math.random() * houseList.length)];
             const crest = HOUSE_CRESTS[chosenHouse];
             const name = HOUSE_NAMES_ES[chosenHouse].toUpperCase();
             
@@ -1001,7 +1021,6 @@ function mostrarSiguiente() {
             lblPalabra.classList.add('hidden');
             wordContainerBox.classList.add('hidden');
             btnRevealWord.classList.remove('hidden');
-            
             txtSpellInput.focus();
         }
 
