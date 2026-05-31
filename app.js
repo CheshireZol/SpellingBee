@@ -220,6 +220,12 @@ let gameMode = 'writing'; // 'writing' o 'examiner'
 let housePoints = 0;
 let streak = 0;
 let maxStreak = 0;
+let voiceAutoEnabled = true;
+
+// Variables del Cronómetro de Práctica
+let wordTimerInterval = null;
+let wordSeconds = 0;
+let totalPracticeSeconds = 0;
 
 // Filtros de Selección de Práctica (Por Dificultad o Capítulos)
 let activeFilterType = 'pages'; // 'pages' o 'difficulty'
@@ -237,6 +243,9 @@ const btnEdicion2 = document.getElementById('btn-edicion-2');
 const btnModeWriting = document.getElementById('btn-mode-writing');
 const btnModeExaminer = document.getElementById('btn-mode-examiner');
 const chkSoundFx = document.getElementById('chk-sound-fx');
+const chkVoiceFx = document.getElementById('chk-voice-fx');
+const chkSoundFxActive = document.getElementById('chk-sound-fx-active');
+const chkVoiceFxActive = document.getElementById('chk-voice-fx-active');
 const paginasContainer = document.getElementById('paginas-container');
 const conteoPalabras = document.getElementById('conteo-palabras');
 const btnIniciar = document.getElementById('btn-iniciar');
@@ -309,8 +318,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
     chkSoundFx.addEventListener('change', (e) => {
         MagicAudio.enabled = e.target.checked;
+        if (chkSoundFxActive) chkSoundFxActive.checked = e.target.checked;
         guardarPreferencias();
     });
+    
+    if (chkVoiceFx) {
+        chkVoiceFx.addEventListener('change', (e) => {
+            voiceAutoEnabled = e.target.checked;
+            if (chkVoiceFxActive) chkVoiceFxActive.checked = e.target.checked;
+            guardarPreferencias();
+        });
+    }
+
+    if (chkSoundFxActive) {
+        chkSoundFxActive.addEventListener('change', (e) => {
+            MagicAudio.enabled = e.target.checked;
+            if (chkSoundFx) chkSoundFx.checked = e.target.checked;
+            guardarPreferencias();
+        });
+    }
+
+    if (chkVoiceFxActive) {
+        chkVoiceFxActive.addEventListener('change', (e) => {
+            voiceAutoEnabled = e.target.checked;
+            if (chkVoiceFx) chkVoiceFx.checked = e.target.checked;
+            guardarPreferencias();
+        });
+    }
     
     radiosLista.forEach(radio => radio.addEventListener('change', cargarListaActual));
     btnIniciar.addEventListener('click', iniciarJuego);
@@ -330,10 +364,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cambios de Velocidad del TTS
+    // Cambios de Velocidad del TTS (Configuración Inicial)
     document.querySelectorAll('input[name="tts-speed"]').forEach(radio => {
         radio.addEventListener('change', (e) => {
-            WizardTTS.speed = parseFloat(e.target.value);
+            const val = e.target.value;
+            WizardTTS.speed = parseFloat(val);
+            // Sincronizar con el control activo de la práctica
+            document.querySelectorAll(`input[name="tts-speed-active"][value="${val}"]`).forEach(r => r.checked = true);
+            guardarPreferencias();
+        });
+    });
+
+    // Cambios de Velocidad del TTS (Durante la Práctica)
+    document.querySelectorAll('input[name="tts-speed-active"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            const val = e.target.value;
+            WizardTTS.speed = parseFloat(val);
+            // Sincronizar con el control de la pantalla de configuración
+            document.querySelectorAll(`input[name="tts-speed"][value="${val}"]`).forEach(r => r.checked = true);
+            guardarPreferencias();
         });
     });
 
@@ -419,6 +468,8 @@ function guardarPreferencias() {
         selectedHouse,
         gameMode,
         soundFxEnabled: MagicAudio.enabled,
+        voiceAutoEnabled,
+        ttsSpeed: WizardTTS.speed,
         listaSeleccionada: document.querySelector('input[name="lista"]:checked')?.value || '1',
         housePoints
     };
@@ -445,6 +496,22 @@ function cargarPreferencias() {
             if (prefs.soundFxEnabled !== undefined) {
                 MagicAudio.enabled = prefs.soundFxEnabled;
                 chkSoundFx.checked = MagicAudio.enabled;
+                if (chkSoundFxActive) chkSoundFxActive.checked = MagicAudio.enabled;
+            }
+
+            // Voz (Pronunciación Automática)
+            if (prefs.voiceAutoEnabled !== undefined) {
+                voiceAutoEnabled = prefs.voiceAutoEnabled;
+                if (chkVoiceFx) chkVoiceFx.checked = prefs.voiceAutoEnabled;
+                if (chkVoiceFxActive) chkVoiceFxActive.checked = prefs.voiceAutoEnabled;
+            }
+
+            // Velocidad TTS
+            if (prefs.ttsSpeed !== undefined) {
+                WizardTTS.speed = prefs.ttsSpeed;
+                const valueStr = String(prefs.ttsSpeed);
+                document.querySelectorAll(`input[name="tts-speed"][value="${valueStr}"]`).forEach(r => r.checked = true);
+                document.querySelectorAll(`input[name="tts-speed-active"][value="${valueStr}"]`).forEach(r => r.checked = true);
             }
             
             // Puntos acumulados de Casa
@@ -916,8 +983,13 @@ function iniciarJuego() {
     incorrectas = [];
     indice = 0;
     
-    // Resetear marcadores del juego
+    // Resetear marcadores del juego y cronómetros
     streak = 0;
+    totalPracticeSeconds = 0;
+    if (wordTimerInterval) {
+        clearInterval(wordTimerInterval);
+        wordTimerInterval = null;
+    }
     actualizarMarcadorPuntos();
 
     viewConfig.classList.add('hidden');
@@ -1012,7 +1084,13 @@ function mostrarSiguiente() {
             txtSpellInput.disabled = false;
             txtSpellInput.className = "flex-1 bg-slate-950/80 border-2 border-slate-800 focus:border-yellow-500/60 rounded-xl px-4 py-3 sm:py-4 text-white text-base sm:text-lg placeholder-slate-600 outline-none transition-all tracking-wide";
             
-            document.getElementById('btn-cast-spell').style.display = 'flex';
+            const btnCast = document.getElementById('btn-cast-spell');
+            if (btnCast) {
+                btnCast.style.display = 'flex';
+                btnCast.innerText = "Conjurar";
+                btnCast.disabled = false;
+                btnCast.classList.remove('btn-sweep-base', 'btn-sweep-correct', 'btn-sweep-incorrect');
+            }
             
             spellFeedback.classList.add('hidden');
             spellFeedback.className = "hidden text-center py-2 rounded-xl transition-all";
@@ -1024,9 +1102,27 @@ function mostrarSiguiente() {
             txtSpellInput.focus();
         }
 
+        // Iniciar el cronómetro de la palabra
+        if (wordTimerInterval) {
+            clearInterval(wordTimerInterval);
+        }
+        wordSeconds = 0;
+        const timerTextEl = document.getElementById('lbl-word-timer');
+        if (timerTextEl) {
+            timerTextEl.innerText = '0s';
+        }
+        
+        wordTimerInterval = setInterval(() => {
+            wordSeconds++;
+            totalPracticeSeconds++;
+            if (timerTextEl) {
+                timerTextEl.innerText = `${wordSeconds}s`;
+            }
+        }, 1000);
+
         // Pronunciar la palabra automáticamente después de una breve pausa
         setTimeout(() => {
-            if (!viewJuego.classList.contains('hidden') && indice < palabrasJuego.length) {
+            if (!viewJuego.classList.contains('hidden') && indice < palabrasJuego.length && voiceAutoEnabled) {
                 WizardTTS.speak(p.palabra);
             }
         }, 400);
@@ -1098,6 +1194,12 @@ function evaluarEscrituraMagica() {
         return;
     }
 
+    // Detener cronómetro inmediatamente para evitar contar el tiempo de feedback y transiciones
+    if (wordTimerInterval) {
+        clearInterval(wordTimerInterval);
+        wordTimerInterval = null;
+    }
+
     txtSpellInput.disabled = true;
     const btnCast = document.getElementById('btn-cast-spell');
 
@@ -1117,23 +1219,13 @@ function evaluarEscrituraMagica() {
 
         // Sonido y feedback visual
         MagicAudio.playSuccess();
-        spellFeedback.className = "block bg-green-500/15 border border-green-500/30 text-green-400 py-3 px-4 rounded-xl text-sm font-semibold animate-pulse";
-        spellFeedback.innerHTML = `<b>¡Hechizo correcto!</b> <span class="text-white">+${ptsGained} Pts</span>`;
-        spellFeedback.classList.remove('hidden');
 
-        // Poner botón verde con "Correcto" por 500ms
-        btnCast.innerText = "Correcto";
-        btnCast.style.background = "#22c55e";
-        btnCast.style.color = "#ffffff";
+        // Animar botón de conjurar barriendo a verde hacia la derecha
+        btnCast.classList.add('btn-sweep-base');
+        btnCast.offsetHeight; // forzar reflow
+        btnCast.classList.add('btn-sweep-correct');
+        btnCast.innerText = "¡Correcto!";
         btnCast.disabled = true;
-
-        setTimeout(() => {
-            btnCast.style.display = 'none';
-            btnCast.innerText = "Conjurar";
-            btnCast.style.background = "";
-            btnCast.style.color = "";
-            btnCast.disabled = false;
-        }, 500);
 
         // Avanzar automáticamente después de 1.6 segundos
         setTimeout(() => {
@@ -1155,23 +1247,12 @@ function evaluarEscrituraMagica() {
         MagicAudio.playError();
         txtSpellInput.className = "flex-1 bg-slate-950/80 border-2 border-red-500/60 rounded-xl px-4 py-3 sm:py-4 text-red-300 text-base sm:text-lg placeholder-slate-600 outline-none transition-all tracking-wide";
         
-        spellFeedback.className = "block bg-red-500/15 border border-red-500/30 text-red-400 py-3 px-4 rounded-xl text-sm font-semibold animate-pulse";
-        spellFeedback.innerHTML = `<b>Hechizo fallido...</b>`;
-        spellFeedback.classList.remove('hidden');
-
-        // Poner botón rojo con "Incorrecto" por 500ms
-        btnCast.innerText = "Incorrecto";
-        btnCast.style.background = "#dc2626";
-        btnCast.style.color = "#ffffff";
+        // Animar botón de conjurar barriendo a rojo hacia la derecha
+        btnCast.classList.add('btn-sweep-base');
+        btnCast.offsetHeight; // forzar reflow
+        btnCast.classList.add('btn-sweep-incorrect');
+        btnCast.innerText = "¡Incorrecto!";
         btnCast.disabled = true;
-
-        setTimeout(() => {
-            btnCast.style.display = 'none';
-            btnCast.innerText = "Conjurar";
-            btnCast.style.background = "";
-            btnCast.style.color = "";
-            btnCast.disabled = false;
-        }, 500);
 
         // Avanzar automáticamente después de 1.6 segundos
         setTimeout(() => {
@@ -1205,6 +1286,12 @@ function resaltarDiferenciasSpell(escrita, correcta) {
 // ==========================================
 function marcarCorrecto() {
     if (indice < palabrasJuego.length) {
+        // Detener cronómetro inmediatamente
+        if (wordTimerInterval) {
+            clearInterval(wordTimerInterval);
+            wordTimerInterval = null;
+        }
+
         correctas.push(palabrasJuego[indice]);
         
         // Sumar puntos
@@ -1223,6 +1310,12 @@ function marcarCorrecto() {
 
 function marcarIncorrecto() {
     if (indice < palabrasJuego.length) {
+        // Detener cronómetro inmediatamente
+        if (wordTimerInterval) {
+            clearInterval(wordTimerInterval);
+            wordTimerInterval = null;
+        }
+
         incorrectas.push(palabrasJuego[indice]);
         streak = 0;
         actualizarMarcadorPuntos();
@@ -1238,6 +1331,12 @@ function marcarIncorrecto() {
 // 13. CEREMONIA DE RESULTADOS (COPA DE LAS CASAS)
 // ==========================================
 function mostrarResultados() {
+    // Detener cronómetro definitivamente
+    if (wordTimerInterval) {
+        clearInterval(wordTimerInterval);
+        wordTimerInterval = null;
+    }
+
     viewJuego.classList.add('hidden');
     viewJuego.classList.remove('block');
     viewResultados.classList.remove('hidden');
@@ -1248,6 +1347,15 @@ function mostrarResultados() {
 
     // Calcular puntos de casa ganados en esta sesión
     const puntosGanadosSesion = correctas.length * 10 + (maxStreak * 2);
+
+    // Formatear y mostrar tiempo total de práctica
+    const minutes = Math.floor(totalPracticeSeconds / 60);
+    const seconds = totalPracticeSeconds % 60;
+    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    const totalTimeEl = document.getElementById('lbl-total-tiempo');
+    if (totalTimeEl) {
+        totalTimeEl.innerText = formattedTime;
+    }
 
     lblPorcentaje.innerText = `${porcentaje.toFixed(1)}%`;
     lblDetalleScore.innerText = `Aciertos: ${correctas.length} • Errores: ${incorrectas.length}`;
@@ -1347,6 +1455,13 @@ function mostrarResultados() {
 
 function reiniciar() {
     MagicAudio.playClick();
+    
+    // Asegurar detener cronómetro al reiniciar
+    if (wordTimerInterval) {
+        clearInterval(wordTimerInterval);
+        wordTimerInterval = null;
+    }
+
     viewResultados.classList.add('hidden');
     viewResultados.classList.remove('block');
     viewConfig.classList.remove('hidden');
