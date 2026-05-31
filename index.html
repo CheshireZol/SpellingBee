@@ -35,7 +35,7 @@
             --color-text-main: #f8fafc;
             --color-text-muted: #94a3b8;
             --house-banner: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            --house-crest: '🏰';
+            --house-crest: '';
         }
 
         .theme-gryffindor {
@@ -47,7 +47,7 @@
             --color-card-bg: rgba(38, 5, 11, 0.78);
             --color-glow: rgba(229, 183, 59, 0.4);
             --house-banner: linear-gradient(135deg, #7a0810 0%, #b30f1a 100%);
-            --house-crest: '🦁';
+            --house-crest: '';
         }
 
         .theme-slytherin {
@@ -59,7 +59,7 @@
             --color-card-bg: rgba(4, 36, 20, 0.78);
             --color-glow: rgba(158, 179, 194, 0.35);
             --house-banner: linear-gradient(135deg, #09472a 0%, #156d40 100%);
-            --house-crest: '🐍';
+            --house-crest: '';
         }
 
         .theme-ravenclaw {
@@ -71,7 +71,7 @@
             --color-card-bg: rgba(5, 22, 58, 0.78);
             --color-glow: rgba(205, 127, 50, 0.4);
             --house-banner: linear-gradient(135deg, #0b1f38 0%, #173b75 100%);
-            --house-crest: '🦅';
+            --house-crest: '';
         }
 
         .theme-hufflepuff {
@@ -83,7 +83,7 @@
             --color-card-bg: rgba(24, 21, 8, 0.8);
             --color-glow: rgba(234, 179, 8, 0.4);
             --house-banner: linear-gradient(135deg, #a1780b 0%, #d9a014 100%);
-            --house-crest: '🦡';
+            --house-crest: '';
         }
 
         /* Estilos Globales */
@@ -100,6 +100,11 @@
             font-family: 'Cinzel', serif;
             letter-spacing: 0.1em;
             text-shadow: 0 0 15px var(--color-glow);
+        }
+
+        #lbl-palabra {
+            font-family: 'Outfit', sans-serif !important;
+            text-transform: none !important;
         }
 
         .magic-card {
@@ -271,7 +276,7 @@
                     </p>
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
                         <button id="btn-biblioteca-abrir" class="px-4 py-2 rounded-lg border border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 text-xs sm:text-sm font-magic transition-colors flex items-center gap-2">
-                            📖 Consultar Grimorio (Biblioteca)
+                            Consultar Grimorio (Biblioteca)
                         </button>
                     </div>
                 </div>
@@ -398,10 +403,10 @@
                         <!-- Selector de Filtros (Arriba) -->
                         <div class="flex gap-1.5 bg-slate-950 p-1.5 rounded-xl border border-slate-800 text-xs font-semibold">
                             <button type="button" id="btn-filter-type-pages" class="py-1.5 px-3 rounded-lg font-magic font-bold transition-all bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
-                                📖 Páginas
+                                Páginas
                             </button>
                             <button type="button" id="btn-filter-type-difficulty" class="py-1.5 px-3 rounded-lg font-magic font-bold transition-all text-slate-400">
-                                ⚡ Dificultad
+                                Dificultad
                             </button>
                         </div>
 
@@ -456,13 +461,13 @@
                     <div class="flex items-center gap-2">
                         <label class="cursor-pointer flex items-center space-x-2">
                             <input type="checkbox" id="chk-sound-fx" checked class="w-4 h-4 text-yellow-500 bg-slate-900 border-slate-700 rounded focus:ring-yellow-500">
-                            <span class="text-xs sm:text-sm font-magic text-slate-300 font-semibold">🔊 Sonidos</span>
+                            <span class="text-xs sm:text-sm font-magic text-slate-300 font-semibold">Sonidos</span>
                         </label>
                     </div>
                     
                     <!-- Control de Velocidad TTS -->
                     <div class="flex items-center gap-4 sm:border-l sm:border-slate-800/60 sm:pl-6">
-                        <span class="text-xs sm:text-sm font-magic text-slate-400 font-semibold">🎙️ Velocidad:</span>
+                        <span class="text-xs sm:text-sm font-magic text-slate-400 font-semibold">Velocidad:</span>
                         <label class="cursor-pointer flex items-center space-x-1.5">
                             <input type="radio" name="tts-speed" value="0.5" class="w-4 h-4 text-yellow-500 bg-slate-900 focus:ring-yellow-500">
                             <span class="text-xs sm:text-sm font-magic text-slate-300 font-semibold">.5x</span>
@@ -520,7 +525,9 @@
                 <!-- Botón de Escuchar Palabra destacado -->
                 <div class="flex justify-center mb-4">
                     <button id="btn-pronounce-active" class="w-16 h-16 sm:w-20 sm:h-20 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 rounded-full border-2 border-yellow-500/30 hover:border-yellow-400 flex items-center justify-center text-2xl transition-all shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:scale-110" title="Escuchar hechizo">
-                        🔊
+                        <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75V5.25L7.75 9.5H4.5v5h3.25L12 18.75z"></path>
+                        </svg>
                     </button>
                 </div>
 
@@ -533,7 +540,7 @@
                     
                     <!-- Caja de Palabra con Dificultad Dinámica -->
                     <div id="word-container-box" class="inline-block max-w-full break-words">
-                        <h1 id="lbl-palabra" class="magic-title text-3xl sm:text-4xl md:text-5xl font-black tracking-wide text-center uppercase select-none w-full text-white">
+                        <h1 id="lbl-palabra" class="magic-title text-3xl sm:text-4xl md:text-5xl font-black tracking-wide text-center select-none w-full text-white">
                             PALABRA
                         </h1>
                     </div>
@@ -596,7 +603,7 @@
         <!-- PANTALLA 3: RESULTADOS (COPA DE LAS CASAS) -->
         <div id="view-resultados" class="hidden space-y-6">
             <h2 class="magic-title text-center text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 mb-2">
-                🏆 Ceremonia de la Copa de las Casas
+                Ceremonia de la Copa de las Casas
             </h2>
 
             <div class="magic-card rounded-3xl p-6 sm:p-10 text-center mb-6 sm:mb-8 space-y-6 relative overflow-hidden">
@@ -660,6 +667,11 @@
             </button>
         </div>
 
+        <!-- FOOTER CRÉDITOS -->
+        <footer class="mt-8 text-center text-xs text-slate-500 font-light tracking-wide py-4 border-t border-slate-900/60">
+            <p>© 2026 temikia.com · Desarrollado por Temikia Agency. Todos los derechos reservados.</p>
+        </footer>
+
     </div>
 
     <!-- BIBLIOTECA MODAL DE CONSULTA (WORD EXPLORER) -->
@@ -668,7 +680,11 @@
             <!-- Header Modal -->
             <div class="p-6 bg-slate-950/80 border-b border-slate-800 flex justify-between items-center">
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl">📚</span>
+                    <span class="text-3xl flex items-center justify-center">
+                        <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </span>
                     <div>
                         <h3 class="font-magic text-base sm:text-xl font-bold text-yellow-500">Grimorio de Biblioteca</h3>
                         <p class="text-[10px] sm:text-xs text-textMuted">Consulta y estudia las palabras mágicas.</p>
@@ -693,7 +709,11 @@
 
                 <!-- Buscador de Palabras -->
                 <div class="relative w-full sm:w-72">
-                    <span class="absolute left-3 top-2.5 text-slate-600">🔍</span>
+                    <span class="absolute left-3 top-3.5 text-slate-500">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </span>
                     <input type="text" id="txt-lib-search" placeholder="Buscar hechizo..." class="w-full bg-slate-950 border border-slate-800 focus:border-yellow-500/50 rounded-xl pl-9 pr-4 py-2 text-sm text-white placeholder-slate-600 outline-none transition-all">
                 </div>
             </div>
