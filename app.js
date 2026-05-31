@@ -163,9 +163,9 @@ const WizardTTS = {
 
     loadVoices() {
         const voices = window.speechSynthesis.getVoices();
-        // Buscamos acento Británico de Inglaterra (en-GB) para inmersión Harry Potter!
-        this.voice = voices.find(v => v.lang === 'en-GB' || v.lang.startsWith('en-GB')) ||
-                     voices.find(v => v.lang.startsWith('en-US')) ||
+        // Buscamos acento Americano (en-US) por preferencia
+        this.voice = voices.find(v => v.lang === 'en-US' || v.lang.startsWith('en-US')) ||
+                     voices.find(v => v.lang.startsWith('en-GB')) ||
                      voices.find(v => v.lang.startsWith('en')) ||
                      voices[0];
     },
